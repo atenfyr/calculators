@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <!--
+        Thanks to JJamess#5504 on the Astroneer discord server for whipping up the power symbol for me
+    -->
+    <head>
+        <meta charset="utf-8">
+        <meta name="robots" content="index, nofollow">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: 'unsafe-inline'">
+        <link rel="shortcut icon" type="image/png" href="assets/output/amps.png"/>
+        <title>EXO Dynamics Power Consumption Calculator</title>
+        <link rel="stylesheet" href="style.css"></link>
+        <script src="calculator.js"></script>
+    </head>
+    <body onload="calc()">
+        <h1>EXO Dynamics Power Consumption Calculator</h1>
+        <div class="inputs">
+            <section class="production">
+                <h2>Production</h2> 
+                <div>
+                    <img class="small" src="assets/input/furnace.png"><label for="furnace">Smelting Furnace</label>
+                    <input type="number" placeholder="0" min="0" id="furnace" name="furnace" onchange="calc()">
+                </div>
+                <div>
+                    <img class="small" src="assets/input/centri.png"><label for="centri">Soil Centrifuge</label>
+                    <input type="number" placeholder="0" min="0" id="centri" name="centri" onchange="calc()">
+                </div>
+                <div>
+                    <img class="small" src="assets/input/lab.png"><label for="lab">Chemistry Lab</label>
+                    <input type="number" placeholder="0" min="0" id="lab" name="lab" onchange="calc()">
+                </div>
+                <div>
+                    <img class="small" src="assets/input/condense.png"><label for="condense">Atmospheric Condenser</label>
+                    <input type="number" placeholder="0" min="0" id="condense" name="condense" onchange="calc()">
+                </div>
+                <div>
+                    <img class="small" src="assets/input/research.png"><label for="research">Research Chamber</label>
+                    <input type="number" placeholder="0" min="0" id="research" name="research" onchange="calc()">
+                </div>
+            </section>
+
+            <section class="shredders">
+                <h2>Shredders</h2>
+                <div>
+                    <img class="small" src="assets/input/shredder.png"><label for="medshred">Medium Shredder</label>
+                    <input type="number" placeholder="0" min="0" id="medshred" name="medshred" onchange="calc()">
+                </div>
+                <div>
+                    <img class="small" src="assets/input/shredder.png"><label for="largeshred">Large Shredder</label>
+                    <input type="number" placeholder="0" min="0" id="largeshred" name="largeshred" onchange="calc()">
+                </div>
+            </section>
+
+            <section class="printers">
+                <h2>Printers</h2>
+                <div>
+                    <img class="small" src="assets/input/smallprint.png"><label for="smallprint">Small Printer</label>
+                    <input type="number" placeholder="0" min="0" id="smallprint" name="smallprint" onchange="calc()">
+                </div>
+                <div>
+                    <img class="small" src="assets/input/medprint.png"><label for="medprint">Medium Printer</label>
+                    <input type="number" placeholder="0" min="0" id="medprint" name="medprint" onchange="calc()">
+                </div>
+                <div>
+                    <img class="small" src="assets/input/largeprint.png"><label for="largeprint">Large Printer</label>
+                    <input type="number" placeholder="0" min="0" id="largeprint" name="largeprint" onchange="calc()">
+                </div>
+            </section>
+
+            <section class="options">
+                <h2>Options</h2>
+                <div>
+                    <img class="small" src="assets/output/amps.png"><label for="Speed">Speed (%)</label>
+                    <input type="number" placeholder="100" min="0" id="speed" name="speed" onchange="calc()">
+                </div>
+            </section>
+        </div>
+        <hr>
+        <div class="outputs">
+            <section>
+                <div class="aligned">
+                    <img class="big" src="assets/output/amps.png">
+                    <span class="output" id="total">0</span><span> amps</span>
+                </div>
+                <div class="aligned">
+                    <img class="big" src="assets/output/rtg.png">
+                    <span class="output" id="rtgs">0</span><span> RTGs</span>
+                </div>
+            </section>
+            <section>
+                <div class="aligned">
+                    <img class="big" src="assets/output/rtg.png">
+                    <span class="output" id="smallgen">0</span><span> small generators</span>
+                </div>
+                <div class="aligned">
+                    <img class="big" src="assets/output/rtg.png">
+                    <span class="output" id="medgen">0</span><span> medium generators</span>
+                </div>
+            </section>
+            <section>
+                <div class="aligned">
+                    <img class="big" src="assets/output/solar.png">
+                    <span class="output" id="smallsolar">0</span><span> small solar panels</span>
+                </div>
+                <div class="aligned">
+                    <img class="big" src="assets/output/solar.png">
+                    <span class="output" id="medsolar">0</span><span> medium solar panels</span>
+                </div>
+                <div class="aligned">
+                    <img class="big" src="assets/output/solar.png">
+                    <span class="output" id="array">0</span><span> solar arrays</span>
+                </div>
+            </section>
+            <section>
+                <div class="aligned">
+                    <img class="big" src="assets/output/wind.png">
+                    <span class="output" id="smallwind">0</span><span> small wind turbines</span>
+                </div>
+                <div class="aligned">
+                    <img class="big" src="assets/output/wind.png">
+                    <span class="output" id="medwind">0</span><span> medium wind turbines</span>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>
