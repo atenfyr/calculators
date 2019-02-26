@@ -8,72 +8,64 @@
         <meta name="robots" content="index, nofollow">
         <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: 'unsafe-inline'">
         <link rel="shortcut icon" type="image/png" href="assets/output/amps.png">
-        <title>EXO Dynamics Power Consumption Calculator</title>
+        <title>EXO Dynamics Power Production Calculator</title>
         <link rel="stylesheet" href="style.css">
         <script src="calculator.js"></script>
     </head>
-    <body onload="calc()">
+    <body onload="calc_amps()">
         <span class="header">
-            <a href="production.html"><img class="big" src="assets/exo.png"><h1>EXO Dynamics Power Consumption Calculator</h1></a>
+            <a href="index.html"><img class="big" src="assets/exo.png"><h1>EXO Dynamics Power Production Calculator</h1></a>
         </span>
         <div class="inputs">
-            <section class="production">
-                <h2>Production</h2> 
+            <section class="generators">
+                <h2>Generators</h2> 
                 <div>
-                    <img class="small" src="assets/input/furnace.png"><label for="furnace">Smelting Furnace</label>
-                    <input type="number" placeholder="0" min="0" id="furnace" name="furnace" onchange="calc()">
+                    <img class="small" src="assets/output/rtg.png"><label for="smallgen">Small Generator</label>
+                    <input type="number" placeholder="0" min="0" id="smallgen" name="smallgen" onchange="calc_amps()">
                 </div>
                 <div>
-                    <img class="small" src="assets/input/centri.png"><label for="centri">Soil Centrifuge</label>
-                    <input type="number" placeholder="0" min="0" id="centri" name="centri" onchange="calc()">
-                </div>
-                <div>
-                    <img class="small" src="assets/input/lab.png"><label for="lab">Chemistry Lab</label>
-                    <input type="number" placeholder="0" min="0" id="lab" name="lab" onchange="calc()">
-                </div>
-                <div>
-                    <img class="small" src="assets/input/condense.png"><label for="condense">Atmospheric Condenser</label>
-                    <input type="number" placeholder="0" min="0" id="condense" name="condense" onchange="calc()">
-                </div>
-                <div>
-                    <img class="small" src="assets/input/research.png"><label for="research">Research Chamber</label>
-                    <input type="number" placeholder="0" min="0" id="research" name="research" onchange="calc()">
+                    <img class="small" src="assets/output/rtg.png"><label for="medgen">Medium Generator</label>
+                    <input type="number" placeholder="0" min="0" id="medgen" name="medgen" onchange="calc_amps()">
                 </div>
             </section>
 
-            <section class="shredders">
-                <h2>Shredders</h2>
+            <section class="solar">
+                <h2>Solar</h2>
                 <div>
-                    <img class="small" src="assets/input/shredder.png"><label for="medshred">Medium Shredder</label>
-                    <input type="number" placeholder="0" min="0" id="medshred" name="medshred" onchange="calc()">
+                    <img class="small" src="assets/output/solar.png"><label for="smallsolar">Small Solar</label>
+                    <input type="number" placeholder="0" min="0" id="smallsolar" name="smallsolar" onchange="calc_amps()">
                 </div>
                 <div>
-                    <img class="small" src="assets/input/shredder.png"><label for="largeshred">Large Shredder</label>
-                    <input type="number" placeholder="0" min="0" id="largeshred" name="largeshred" onchange="calc()">
-                </div>
-            </section>
-
-            <section class="printers">
-                <h2>Printers</h2>
-                <div>
-                    <img class="small" src="assets/input/smallprint.png"><label for="smallprint">Small Printer</label>
-                    <input type="number" placeholder="0" min="0" id="smallprint" name="smallprint" onchange="calc()">
+                    <img class="small" src="assets/output/solar.png"><label for="medsolar">Medium Solar</label>
+                    <input type="number" placeholder="0" min="0" id="medsolar" name="medsolar" onchange="calc_amps()">
                 </div>
                 <div>
-                    <img class="small" src="assets/input/medprint.png"><label for="medprint">Medium Printer</label>
-                    <input type="number" placeholder="0" min="0" id="medprint" name="medprint" onchange="calc()">
-                </div>
-                <div>
-                    <img class="small" src="assets/input/largeprint.png"><label for="largeprint">Large Printer</label>
-                    <input type="number" placeholder="0" min="0" id="largeprint" name="largeprint" onchange="calc()">
+                    <img class="small" src="assets/output/solar.png"><label for="array">Solar Array</label>
+                    <input type="number" placeholder="0" min="0" id="array" name="array" onchange="calc_amps()">
                 </div>
             </section>
 
-            <section class="options">
-                <h2>Options</h2>
+            <section class="wind">
+                <h2>Wind</h2>
                 <div>
-                    <img class="small" src="assets/output/amps.png"><label for="speed">Speed (%)</label>
-                    <input type="number" placeholder="100" min="0" max="100" id="speed" name="speed" onchange="calc()">
+                    <img class="small" src="assets/output/wind.png"><label for="smallwind">Small Wind Turbine</label>
+                    <input type="number" placeholder="0" min="0" id="smallwind" name="smallwind" onchange="calc_amps()">
+                </div>
+                <div>
+                    <img class="small" src="assets/output/wind.png"><label for="medwind">Medium Wind Turbine</label>
+                    <input type="number" placeholder="0" min="0" id="medwind" name="medwind" onchange="calc_amps()">
+                </div>
+            </section>
+
+            <section class="misc">
+                <h2>Miscellaneous</h2>
+                <div>
+                    <img class="small" src="assets/output/rtg.png"><label for="rtgs">RTG</label>
+                    <input type="number" placeholder="0" min="0" id="rtgs" name="rtgs" onchange="calc_amps()">
+                </div>
+                <div>
+                    <img class="small" src="assets/output/shelter.png"><label for="shelter">Shelter</label>
+                    <input type="number" placeholder="0" min="0" id="shelter" name="shelter" onchange="calc_amps()">
                 </div>
             </section>
         </div>

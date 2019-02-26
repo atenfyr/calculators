@@ -4,6 +4,12 @@ html {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+a {
+    color: inherit;
+    font-weight: inherit;
+    text-decoration: inherit;
+}
+
 h1 {
     display: inline;
     font-weight: bold;
@@ -58,11 +64,27 @@ label {
 }
 
 .printers label {
-    width: 125px;
+    width: 130px;
 }
 
 .options label {
     width: 100px;
+}
+
+.generators label {
+    width: 150px;
+}
+
+.solar label {
+    width: 120px;
+}
+
+.wind label {
+    width: 180px;
+}
+
+.misc label {
+    width: 60px;
 }
 
 .output {

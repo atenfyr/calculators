@@ -13,6 +13,17 @@ var amperage = {
     "largeprint": 3
 }
 
+var power = {
+    "rtgs": 4,
+    "smallgen": 1,
+    "medgen": 3,
+    "smallsolar": 0.5,
+    "medsolar": 2,
+    "array": 8,
+    "smallwind": 0.5,
+    "medwind": 1
+}
+
 function truncateValue(val) { // round to 2 decimal digits
     return parseFloat(val).toFixed(2);
 }
@@ -21,10 +32,22 @@ function parseValue(amps, factor) {
     return Math.ceil(amps/factor);
 }
 
+function updateFields(total) {
+    var elems = document.getElementsByClassName("output");
+    for (var i = 0; i < elems.length; i++) {
+        var elem = elems[i];
+        if (elem.id === "total") {
+            elem.innerHTML = truncateValue(total);
+        } else {
+            elem.innerHTML = parseValue(total, power[elem.id])
+        }
+    }
+}
+
 function calc() {
     var total = 0;
     var speed = parseInt(document.getElementById("speed").value);
-    if (isNaN(speed)) speed = 100;
+    if (isNaN(speed) || speed < 0 || speed > 100) speed = 100;
     speed = Math.ceil(speed) / 100;
 
     for (var i in amperage) {
@@ -33,14 +56,17 @@ function calc() {
         }
     }
 
-    document.getElementById("total").innerHTML = truncateValue(total);
-    document.getElementById("rtgs").innerHTML = parseValue(total, 4);
-    document.getElementById("smallgen").innerHTML = parseValue(total, 1);
-    document.getElementById("medgen").innerHTML = parseValue(total, 3);
-    document.getElementById("smallsolar").innerHTML = parseValue(total, 0.5);
-    document.getElementById("medsolar").innerHTML = parseValue(total, 2);
-    document.getElementById("array").innerHTML = parseValue(total, 8);
-    document.getElementById("smallwind").innerHTML = parseValue(total, 0.5);
-    document.getElementById("medwind").innerHTML = parseValue(total, 1);
-    return total;
+    updateFields(total);
+}
+
+function calc_amps() {
+    var total = 0;
+    for (var i in power) {
+        if (power.hasOwnProperty(i)) {
+            total += power[i]*(parseInt(document.getElementById(i).value) || 0);
+        }
+    }
+    total += (parseInt(document.getElementById("shelter").value) || 0)
+
+    updateFields(total);
 }
