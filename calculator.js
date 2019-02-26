@@ -24,6 +24,7 @@ function calc() {
             total += (amperage[i]*speed)*(parseInt(document.getElementById(i).value) || 0);
         }
     }
+    
     document.getElementById("total").innerHTML = total;
     document.getElementById("rtgs").innerHTML = Math.ceil(total/4);
     document.getElementById("smallgen").innerHTML = Math.ceil(total);
