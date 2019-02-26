@@ -13,6 +13,14 @@ var amperage = {
     "largeprint": 3
 }
 
+function truncateValue(val) { // round to 2 decimal digits
+    return parseFloat(val).toFixed(2);
+}
+
+function parseValue(amps, factor) {
+    return Math.ceil(amps/factor);
+}
+
 function calc() {
     var total = 0;
     var speed = parseInt(document.getElementById("speed").value);
@@ -24,15 +32,15 @@ function calc() {
             total += (amperage[i]*speed)*(parseInt(document.getElementById(i).value) || 0);
         }
     }
-    
-    document.getElementById("total").innerHTML = total;
-    document.getElementById("rtgs").innerHTML = Math.ceil(total/4);
-    document.getElementById("smallgen").innerHTML = Math.ceil(total);
-    document.getElementById("medgen").innerHTML = Math.ceil(total/3);
-    document.getElementById("smallsolar").innerHTML = Math.ceil(total/0.5);
-    document.getElementById("medsolar").innerHTML = Math.ceil(total/2);
-    document.getElementById("array").innerHTML = Math.ceil(total/8);
-    document.getElementById("smallwind").innerHTML = Math.ceil(total/0.5);
-    document.getElementById("medwind").innerHTML = Math.ceil(total);
+
+    document.getElementById("total").innerHTML = truncateValue(total);
+    document.getElementById("rtgs").innerHTML = parseValue(total, 4);
+    document.getElementById("smallgen").innerHTML = parseValue(total, 1);
+    document.getElementById("medgen").innerHTML = parseValue(total, 3);
+    document.getElementById("smallsolar").innerHTML = parseValue(total, 0.5);
+    document.getElementById("medsolar").innerHTML = parseValue(total, 2);
+    document.getElementById("array").innerHTML = parseValue(total, 8);
+    document.getElementById("smallwind").innerHTML = parseValue(total, 0.5);
+    document.getElementById("medwind").innerHTML = parseValue(total, 1);
     return total;
 }
