@@ -21,7 +21,10 @@ var power = {
     "medsolar": 2,
     "array": 8,
     "smallwind": 0.5,
-    "medwind": 1
+    "medwind": 1,
+    "shelter": 1,
+    "smallbatt": 1,
+    "medbatt": 3
 }
 
 function truncateValue(val) { // round to 2 decimal digits
@@ -66,7 +69,6 @@ function calc_amps() {
             total += power[i]*(parseInt(document.getElementById(i).value) || 0);
         }
     }
-    total += (parseInt(document.getElementById("shelter").value) || 0)
 
     updateFields(total);
 }

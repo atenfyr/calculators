@@ -127,35 +127,35 @@ label {
 }
 
 .production label {
-    width: 200px;
+    width: 196px;
 }
 
 .shredders label {
-    width: 150px;
+    width: 146px;
 }
 
 .printers label {
-    width: 130px;
+    width: 127px;
 }
 
 .options label {
-    width: 100px;
+    width: 88px;
 }
 
 .generators label {
-    width: 150px;
+    width: 152px;
 }
 
 .solar label {
-    width: 120px;
+    width: 115px;
 }
 
 .wind label {
-    width: 180px;
+    width: 176px;
 }
 
 .misc label {
-    width: 60px;
+    width: 131px;
 }
 
 .output {

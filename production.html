@@ -18,7 +18,7 @@
         <div id="navbar" class="closed">
             <a href="./">Home</a>
             <a href="consumption.html">Power Consumption</a>
-            <a class="active" href="production.html">Power Production</a>
+            <a class="active">Power Production</a>
             <img class="menu-icon" src="assets/hamburger.png" onclick="expand()">
         </div>
         <div id="content">
@@ -75,6 +75,14 @@
                     <div>
                         <img class="small" src="assets/output/shelter.png"><label for="shelter">Shelter</label>
                         <input type="number" placeholder="0" min="0" id="shelter" name="shelter" onchange="calc_amps()">
+                    </div>
+                    <div>
+                        <img class="small" src="assets/output/battery.png"><label for="smallbatt">Small Battery</label>
+                        <input type="number" placeholder="0" min="0" id="smallbatt" name="smallbatt" onchange="calc_amps()">
+                    </div>
+                    <div>
+                        <img class="small" src="assets/output/battery.png"><label for="medbatt">Medium Battery</label>
+                        <input type="number" placeholder="0" min="0" id="medbatt" name="medbatt" onchange="calc_amps()">
                     </div>
                 </section>
             </div>
