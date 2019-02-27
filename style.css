@@ -40,6 +40,10 @@ a {
     text-decoration: inherit;
 }
 
+a.active {
+    color: #999 !important;
+}
+
 h1 {
     display: inline;
     font-weight: bold;
