@@ -1,0 +1,14 @@
+.bigtext {
+    margin-top: 15px;
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+li a {
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+li a:hover {
+    color: #aaa;
+}
