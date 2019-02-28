@@ -168,7 +168,8 @@ label {
 
 .aligned {
     vertical-align: middle;
-    width: 234px;
+    min-width: 214px;
+    margin-right: 20px;
 }
 
 hr {
