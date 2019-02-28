@@ -10,9 +10,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" type="image/png" href="assets/output/amps.png">
         <title>EXO Dynamics Power Production Calculator</title>
-        <link rel="stylesheet" href="src/style.css">
-        <script src="src/calculator.js"></script>
-        <script src="src/responsive.js"></script>
+        <link rel="stylesheet" href="src/style.min.css">
+        <script src="src/calculator.min.js"></script>
+        <script src="src/responsive.min.js"></script>
     </head>
     <body onload="calc_amps()">
         <div id="navbar" class="closed">
@@ -30,11 +30,11 @@
                     <h2>Generators</h2> 
                     <div>
                         <img class="small" src="assets/output/rtg.png"><label for="smallgen">Small Generator</label>
-                        <input type="number" placeholder="0" min="0" id="smallgen" name="smallgen" onchange="calc_amps()">
+                        <input type="number" placeholder="0" min="0" id="smallgen" onchange="calc_amps()">
                     </div>
                     <div>
                         <img class="small" src="assets/output/rtg.png"><label for="medgen">Medium Generator</label>
-                        <input type="number" placeholder="0" min="0" id="medgen" name="medgen" onchange="calc_amps()">
+                        <input type="number" placeholder="0" min="0" id="medgen" onchange="calc_amps()">
                     </div>
                 </section>
 
@@ -42,15 +42,15 @@
                     <h2>Solar</h2>
                     <div>
                         <img class="small" src="assets/output/solar.png"><label for="smallsolar">Small Solar</label>
-                        <input type="number" placeholder="0" min="0" id="smallsolar" name="smallsolar" onchange="calc_amps()">
+                        <input type="number" placeholder="0" min="0" id="smallsolar" onchange="calc_amps()">
                     </div>
                     <div>
                         <img class="small" src="assets/output/solar.png"><label for="medsolar">Medium Solar</label>
-                        <input type="number" placeholder="0" min="0" id="medsolar" name="medsolar" onchange="calc_amps()">
+                        <input type="number" placeholder="0" min="0" id="medsolar" onchange="calc_amps()">
                     </div>
                     <div>
                         <img class="small" src="assets/output/solar.png"><label for="array">Solar Array</label>
-                        <input type="number" placeholder="0" min="0" id="array" name="array" onchange="calc_amps()">
+                        <input type="number" placeholder="0" min="0" id="array" onchange="calc_amps()">
                     </div>
                 </section>
 
@@ -58,11 +58,11 @@
                     <h2>Wind</h2>
                     <div>
                         <img class="small" src="assets/output/wind.png"><label for="smallwind">Small Wind Turbine</label>
-                        <input type="number" placeholder="0" min="0" id="smallwind" name="smallwind" onchange="calc_amps()">
+                        <input type="number" placeholder="0" min="0" id="smallwind" onchange="calc_amps()">
                     </div>
                     <div>
                         <img class="small" src="assets/output/wind.png"><label for="medwind">Medium Wind Turbine</label>
-                        <input type="number" placeholder="0" min="0" id="medwind" name="medwind" onchange="calc_amps()">
+                        <input type="number" placeholder="0" min="0" id="medwind" onchange="calc_amps()">
                     </div>
                 </section>
 
@@ -70,19 +70,19 @@
                     <h2>Miscellaneous</h2>
                     <div>
                         <img class="small" src="assets/output/rtg.png"><label for="rtgs">RTG</label>
-                        <input type="number" placeholder="0" min="0" id="rtgs" name="rtgs" onchange="calc_amps()">
+                        <input type="number" placeholder="0" min="0" id="rtgs" onchange="calc_amps()">
                     </div>
                     <div>
                         <img class="small" src="assets/output/shelter.png"><label for="shelter">Shelter</label>
-                        <input type="number" placeholder="0" min="0" id="shelter" name="shelter" onchange="calc_amps()">
+                        <input type="number" placeholder="0" min="0" id="shelter" onchange="calc_amps()">
                     </div>
                     <div>
                         <img class="small" src="assets/output/battery.png"><label for="smallbatt">Small Battery</label>
-                        <input type="number" placeholder="0" min="0" id="smallbatt" name="smallbatt" onchange="calc_amps()">
+                        <input type="number" placeholder="0" min="0" id="smallbatt" onchange="calc_amps()">
                     </div>
                     <div>
                         <img class="small" src="assets/output/battery.png"><label for="medbatt">Medium Battery</label>
-                        <input type="number" placeholder="0" min="0" id="medbatt" name="medbatt" onchange="calc_amps()">
+                        <input type="number" placeholder="0" min="0" id="medbatt" onchange="calc_amps()">
                     </div>
                 </section>
             </div>

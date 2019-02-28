@@ -10,9 +10,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" type="image/png" href="assets/output/amps.png">
         <title>EXO Dynamics Power Consumption Calculator</title>
-        <link rel="stylesheet" href="src/style.css">
-        <script src="src/calculator.js"></script>
-        <script src="src/responsive.js"></script>
+        <link rel="stylesheet" href="src/style.min.css">
+        <script src="src/calculator.min.js"></script>
+        <script src="src/responsive.min.js"></script>
     </head>
     <body onload="calc()">
         <div id="navbar" class="closed">
@@ -30,23 +30,23 @@
                     <h2>Production</h2> 
                     <div>
                         <img class="small" src="assets/input/furnace.png"><label for="furnace">Smelting Furnace</label>
-                        <input type="number" placeholder="0" min="0" id="furnace" name="furnace" onchange="calc()">
+                        <input type="number" placeholder="0" min="0" id="furnace" onchange="calc()">
                     </div>
                     <div>
                         <img class="small" src="assets/input/centri.png"><label for="centri">Soil Centrifuge</label>
-                        <input type="number" placeholder="0" min="0" id="centri" name="centri" onchange="calc()">
+                        <input type="number" placeholder="0" min="0" id="centri" onchange="calc()">
                     </div>
                     <div>
                         <img class="small" src="assets/input/lab.png"><label for="lab">Chemistry Lab</label>
-                        <input type="number" placeholder="0" min="0" id="lab" name="lab" onchange="calc()">
+                        <input type="number" placeholder="0" min="0" id="lab" onchange="calc()">
                     </div>
                     <div>
                         <img class="small" src="assets/input/condense.png"><label for="condense">Atmospheric Condenser</label>
-                        <input type="number" placeholder="0" min="0" id="condense" name="condense" onchange="calc()">
+                        <input type="number" placeholder="0" min="0" id="condense" onchange="calc()">
                     </div>
                     <div>
                         <img class="small" src="assets/input/research.png"><label for="research">Research Chamber</label>
-                        <input type="number" placeholder="0" min="0" id="research" name="research" onchange="calc()">
+                        <input type="number" placeholder="0" min="0" id="research" onchange="calc()">
                     </div>
                 </section>
 
@@ -54,11 +54,11 @@
                     <h2>Shredders</h2>
                     <div>
                         <img class="small" src="assets/input/shredder.png"><label for="medshred">Medium Shredder</label>
-                        <input type="number" placeholder="0" min="0" id="medshred" name="medshred" onchange="calc()">
+                        <input type="number" placeholder="0" min="0" id="medshred" onchange="calc()">
                     </div>
                     <div>
                         <img class="small" src="assets/input/shredder.png"><label for="largeshred">Large Shredder</label>
-                        <input type="number" placeholder="0" min="0" id="largeshred" name="largeshred" onchange="calc()">
+                        <input type="number" placeholder="0" min="0" id="largeshred" onchange="calc()">
                     </div>
                 </section>
 
@@ -66,15 +66,47 @@
                     <h2>Printers</h2>
                     <div>
                         <img class="small" src="assets/input/smallprint.png"><label for="smallprint">Small Printer</label>
-                        <input type="number" placeholder="0" min="0" id="smallprint" name="smallprint" onchange="calc()">
+                        <input type="number" placeholder="0" min="0" id="smallprint" onchange="calc()">
                     </div>
                     <div>
                         <img class="small" src="assets/input/medprint.png"><label for="medprint">Medium Printer</label>
-                        <input type="number" placeholder="0" min="0" id="medprint" name="medprint" onchange="calc()">
+                        <input type="number" placeholder="0" min="0" id="medprint" onchange="calc()">
                     </div>
                     <div>
                         <img class="small" src="assets/input/largeprint.png"><label for="largeprint">Large Printer</label>
-                        <input type="number" placeholder="0" min="0" id="largeprint" name="largeprint" onchange="calc()">
+                        <input type="number" placeholder="0" min="0" id="largeprint" onchange="calc()">
+                    </div>
+                </section>
+
+                <section class="gateways">
+                    <h2><abbr title="Each gateway chamber (or &quot;purple&quot;) requires a steady flow of power to activate. However, you don't need to activate all gateway chambers at once, so you should only need to set the value for the planet you're on unless you're doing something crazy.">Gateway Chambers</abbr></h2>
+                    <div>
+                        <img class="small" src="assets/planets/sylva.png"><label for="sylva">Sylva</label>
+                        <input type="number" placeholder="0" min="0" id="sylva" onchange="calc()">
+                    </div>
+                    <div>
+                        <img class="small" src="assets/planets/desolo.png"><label for="desolo">Desolo</label>
+                        <input type="number" placeholder="0" min="0" id="desolo" onchange="calc()">
+                    </div>
+                    <div>
+                        <img class="small" src="assets/planets/calidor.png"><label for="calidor">Calidor</label>
+                        <input type="number" placeholder="0" min="0" id="calidor" onchange="calc()">
+                    </div>
+                    <div>
+                        <img class="small" src="assets/planets/vesania.png"><label for="vesania">Vesania</label>
+                        <input type="number" placeholder="0" min="0" id="vesania" onchange="calc()">
+                    </div>
+                    <div>
+                        <img class="small" src="assets/planets/novus.png"><label for="novus">Novus</label>
+                        <input type="number" placeholder="0" min="0" id="novus" onchange="calc()">
+                    </div>
+                    <div>
+                        <img class="small" src="assets/planets/glacio.png"><label for="glacio">Glacio</label>
+                        <input type="number" placeholder="0" min="0" id="glacio" onchange="calc()">
+                    </div>
+                    <div>
+                        <img class="small" src="assets/planets/atrox.png"><label for="atrox">Atrox</label>
+                        <input type="number" placeholder="0" min="0" id="atrox" onchange="calc()">
                     </div>
                 </section>
 
@@ -82,7 +114,7 @@
                     <h2>Options</h2>
                     <div>
                         <img class="small" src="assets/output/amps.png"><label for="speed">Speed (%)</label>
-                        <input type="number" placeholder="100" min="0" max="100" id="speed" name="speed" onchange="calc()">
+                        <input type="number" placeholder="100" min="0" max="100" id="speed" onchange="calc()">
                     </div>
                 </section>
             </div>
