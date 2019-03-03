@@ -132,46 +132,6 @@ label {
     font-weight: bold;
 }
 
-.production label {
-    width: 196px;
-}
-
-.shredders label {
-    width: 146px;
-}
-
-.printers label {
-    width: 127px;
-}
-
-.vehicles label {
-    width: 121px;
-}
-
-.gateways label {
-    width: 70px;    
-}
-
-.options label {
-    width: 88px;
-}
-
-.generators label {
-    width: 152px;
-}
-
-.solar label {
-    width: 115px;
-}
-
-.wind label {
-    width: 176px;
-}
-
-.misc label {
-    width: 131px;
-}
-
 .output {
     font-weight: bold;
 }
