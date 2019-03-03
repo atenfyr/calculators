@@ -27,7 +27,7 @@
                 <a href="./"><img class="big" src="assets/exo.png"><h1>EXO Dynamics Power Consumption Calculator</h1></a>
             </span>
             <div class="inputs">
-                <section class="production">
+                <section>
                     <h2>Production</h2> 
                     <div>
                         <img class="small" src="assets/input/furnace.png"><label for="furnace">Smelting Furnace</label>
@@ -51,7 +51,7 @@
                     </div>
                 </section>
 
-                <section class="shredders">
+                <section>
                     <h2>Shredders</h2>
                     <div>
                         <img class="small" src="assets/input/shredder.png"><label for="medshred">Medium Shredder</label>
@@ -63,7 +63,7 @@
                     </div>
                 </section>
 
-                <section class="printers">
+                <section>
                     <h2>Printers</h2>
                     <div>
                         <img class="small" src="assets/input/smallprint.png"><label for="smallprint">Small Printer</label>
@@ -79,7 +79,7 @@
                     </div>
                 </section>
 
-                <section class="vehicles">
+                <section>
                     <h2>Vehicles</h2>
                     <div>
                         <img class="small" src="assets/input/rover.png"><label for="medrover">Medium Rover</label>
@@ -97,41 +97,57 @@
                         <img class="small" src="assets/input/rover.png"><label for="buggy">Buggy</label>
                         <input type="number" placeholder="0" min="0" id="buggy" onchange="calc()">
                     </div>
-                </section>
-
-                <section class="gateways">
-                    <h2><abbr title="Each gateway chamber (or &quot;purple&quot;) requires a steady flow of power to activate. However, you don't need to activate all gateway chambers at once, so you should only need to set the value for the planet you're on unless you're doing something crazy.">Gateway Chambers</abbr></h2>
                     <div>
-                        <img class="small" src="assets/planets/sylva.png"><label for="sylva">Sylva</label>
-                        <input type="number" placeholder="0" min="0" id="sylva" onchange="calc()">
-                    </div>
-                    <div>
-                        <img class="small" src="assets/planets/desolo.png"><label for="desolo">Desolo</label>
-                        <input type="number" placeholder="0" min="0" id="desolo" onchange="calc()">
-                    </div>
-                    <div>
-                        <img class="small" src="assets/planets/calidor.png"><label for="calidor">Calidor</label>
-                        <input type="number" placeholder="0" min="0" id="calidor" onchange="calc()">
-                    </div>
-                    <div>
-                        <img class="small" src="assets/planets/vesania.png"><label for="vesania">Vesania</label>
-                        <input type="number" placeholder="0" min="0" id="vesania" onchange="calc()">
-                    </div>
-                    <div>
-                        <img class="small" src="assets/planets/novus.png"><label for="novus">Novus</label>
-                        <input type="number" placeholder="0" min="0" id="novus" onchange="calc()">
-                    </div>
-                    <div>
-                        <img class="small" src="assets/planets/glacio.png"><label for="glacio">Glacio</label>
-                        <input type="number" placeholder="0" min="0" id="glacio" onchange="calc()">
-                    </div>
-                    <div>
-                        <img class="small" src="assets/planets/atrox.png"><label for="atrox">Atrox</label>
-                        <input type="number" placeholder="0" min="0" id="atrox" onchange="calc()">
+                        <img class="small" src="assets/input/drill.png"><label for="drill">Drills</label>
+                        <input type="number" placeholder="0" min="0" id="drill" onchange="calc()">
                     </div>
                 </section>
 
-                <section class="options">
+                <section>
+                    <h2>Backpack Items</h2>
+                    <div>
+                        <img class="small" src="assets/input/oxygenator.png"><label for="oxygenator">Portable Oxygenator</label>
+                        <input type="number" placeholder="0" min="0" id="oxygenator" onchange="calc()">
+                    </div>
+                    <div>
+                        <img class="small" src="assets/input/mods.png"><label for="inhibitor">Inhibitor Mod</label>
+                        <input type="number" placeholder="0" min="0" id="inhibitor" onchange="calc()">
+                    </div>
+                    <div>
+                        <img class="small" src="assets/input/mods.png"><label for="boost">Boost Mod</label>
+                        <input type="number" placeholder="0" min="0" id="boost" onchange="calc()">
+                    </div>
+                    <div>
+                        <img class="small" src="assets/input/mods.png"><label for="narrow">Narrow Mod</label>
+                        <input type="number" placeholder="0" min="0" id="narrow" onchange="calc()">
+                    </div>
+                    <div>
+                        <img class="small" src="assets/input/mods.png"><label for="wide">Wide Mod</label>
+                        <input type="number" placeholder="0" min="0" id="wide" onchange="calc()">
+                    </div>
+                    <div>
+                        <img class="small" src="assets/input/mods.png"><label for="alignment">Alignment Mod</label>
+                        <input type="number" placeholder="0" min="0" id="alignment" onchange="calc()">
+                    </div>
+                    <div>
+                        <img class="small" src="assets/input/mods.png"><label for="analyzer">Terrain Analyzer</label>
+                        <input type="number" placeholder="0" min="0" id="analyzer" onchange="calc()">
+                    </div>
+                    <div>
+                        <img class="small" src="assets/input/mods.png"><label for="drill1">Drill Mod 1</label>
+                        <input type="number" placeholder="0" min="0" id="drill1" onchange="calc()">
+                    </div>
+                    <div>
+                        <img class="small" src="assets/input/mods.png"><label for="drill2">Drill Mod 2</label>
+                        <input type="number" placeholder="0" min="0" id="drill2" onchange="calc()">
+                    </div>
+                    <div>
+                        <img class="small" src="assets/input/mods.png"><label for="drill3">Drill Mod 3</label>
+                        <input type="number" placeholder="0" min="0" id="drill3" onchange="calc()">
+                    </div>
+                </section>
+
+                <section>
                     <h2>Options</h2>
                     <div>
                         <img class="small" src="assets/output/amps.png"><label for="speed">Speed (%)</label>

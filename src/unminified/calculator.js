@@ -6,22 +6,30 @@ var amperage = {
     "lab": 3,
     "condense": 6,
     "research": 2,
+
     "medshred": 1.5,
     "largeshred": 3,
+
     "smallprint": 1,
     "medprint": 2,
     "largeprint": 3,
-    "sylva": 5,
-    "desolo": 8,
-    "calidor": 12,
-    "vesania": 16,
-    "novus": 21,
-    "glacio": 26,
-    "atrox": 30,
+
     "medrover": 0.5,
     "largerover": 1,
     "tractor": 0.075,
-    "buggy": 0.019
+    "buggy": 0.019,
+
+    "drill": 1,
+    "oxygenator": 4/3, // 1.3333..
+    "inhibitor": 0.2,
+    "boost": 0.75,
+    "narrow": 0.5,
+    "wide": 0.5,
+    "alignment": 0.5,
+    "analyzer": 0.5,
+    "drill1": 0.25,
+    "drill2": 0.5,
+    "drill3": 0.75
 }
 
 var can_be_slowed_down = [
