@@ -96,6 +96,12 @@ h2 {
     flex-wrap: wrap;
 }
 
+.inputs section {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 26%;
+}
+
 img {
     vertical-align: middle;
     margin-right: 10px;
@@ -136,6 +142,10 @@ label {
 
 .printers label {
     width: 127px;
+}
+
+.vehicles label {
+    width: 121px;
 }
 
 .gateways label {

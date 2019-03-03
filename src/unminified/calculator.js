@@ -10,18 +10,32 @@ var amperage = {
     "largeshred": 3,
     "smallprint": 1,
     "medprint": 2,
-    "largeprint": 3
-}
-
-var planet_amperage = {
+    "largeprint": 3,
     "sylva": 5,
     "desolo": 8,
     "calidor": 12,
     "vesania": 16,
     "novus": 21,
     "glacio": 26,
-    "atrox": 30
+    "atrox": 30,
+    "medrover": 0.5,
+    "largerover": 1,
+    "tractor": 0.075,
+    "buggy": 0.019
 }
+
+var can_be_slowed_down = [
+    "furnace",
+    "centri",
+    "lab",
+    "condense",
+    "research",
+    "medshred",
+    "largeshred",
+    "smallprint",
+    "medprint",
+    "largeprint"
+]
 
 var power = {
     "rtgs": 4,
@@ -65,13 +79,11 @@ function calc() {
 
     for (var i in amperage) {
         if (amperage.hasOwnProperty(i)) {
-            total += (amperage[i]*speed)*(parseInt(document.getElementById(i).value) || 0);
-        }
-    }
-
-    for (var i in planet_amperage) {
-        if (planet_amperage.hasOwnProperty(i)) {
-            total += planet_amperage[i]*(parseInt(document.getElementById(i).value) || 0);
+            var adjusted = amperage[i];
+            if (can_be_slowed_down.indexOf(i) !== -1) {
+                adjusted *= speed;
+            }
+            total += adjusted*(parseInt(document.getElementById(i).value) || 0);
         }
     }
 
