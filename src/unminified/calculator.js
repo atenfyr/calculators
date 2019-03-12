@@ -20,7 +20,7 @@ var amperage = {
     "buggy": 0.019,
 
     "drill": 1,
-    "oxygenator": 4/3, // 1.3333..
+    "oxygenator": 1.35,
     "inhibitor": 0.2,
     "boost": 0.75,
     "narrow": 0.5,
