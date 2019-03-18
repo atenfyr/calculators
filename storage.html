@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="robots" content="index, nofollow">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: 'unsafe-inline'">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/png" href="assets/output/amps.png">
+        <title>EXO Dynamics Power Storage Calculator</title>
+        <link rel="stylesheet" href="src/style.min.css">
+        <link rel="stylesheet" href="src/storage.min.css">
+        <script src="src/storage_calculator.min.js"></script>
+        <script src="src/responsive.min.js"></script>
+    </head>
+    <body onload="calc()">
+        <div id="navbar" class="closed">
+            <a href="./">Home</a>
+            <a href="consumption.html">Power Consumption</a>
+            <a href="production.html">Power Production</a>
+            <a class="active" href="storage.html">Power Storage</a>
+            <img class="menu-icon" src="assets/hamburger.png" onclick="expand()">
+        </div>
+        <div id="content">
+            <span class="header">
+                <a href="./"><img class="big" src="assets/exo.png"><h1>EXO Dynamics Power Storage Calculator</h1></a>
+            </span>
+            <div class="inputs">
+                <section>
+                    <h2>Batteries</h2> 
+                    <div>
+                        <img class="small" src="assets/output/battery.png"><label for="smallbatt">Small Battery</label>
+                        <input type="number" placeholder="0" min="0" id="smallbatt" onchange="calc()">
+                    </div>
+                    <div>
+                        <img class="small" src="assets/output/battery.png"><label for="medbatt">Medium Battery</label>
+                        <input type="number" placeholder="0" min="0" id="medbatt" onchange="calc()">
+                    </div>
+                    <div>
+                        <img class="small" src="assets/output/amps.png"><label for="cells">Power Cells</label>
+                        <input type="number" placeholder="0" min="0" id="cells" onchange="calc()">
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Vehicles</h2>
+                    <div>
+                        <img class="small" src="assets/input/rover.png"><label for="medrover">Medium Rover</label>
+                        <input type="number" placeholder="0" min="0" id="medrover" onchange="calc()">
+                    </div>
+                    <div>
+                        <img class="small" src="assets/input/rover.png"><label for="largerover">Large Rover</label>
+                        <input type="number" placeholder="0" min="0" id="largerover" onchange="calc()">
+                    </div>
+                    <div>
+                        <img class="small" src="assets/input/tractor.png"><label for="tractor">Tractor</label>
+                        <input type="number" placeholder="0" min="0" id="tractor" onchange="calc()">
+                    </div>
+                    <div>
+                        <img class="small" src="assets/input/rover.png"><label for="buggy">Buggy</label>
+                        <input type="number" placeholder="0" min="0" id="buggy" onchange="calc()">
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Miscellaneous</h2>
+                    <div>
+                        <img class="small" src="assets/misc/backpack.png"><label for="backpack">Backpack</label>
+                        <input type="number" placeholder="0" min="0" id="backpack" onchange="calc()">
+                    </div>
+                </section>
+            </div>
+            <hr>
+            <div class="outputs">
+                <section>
+                    <div class="aligned">
+                        <img class="big" src="assets/output/amps.png">
+                        <span class="output" id="total">0.00</span><span> units</span>
+                    </div>
+                </section>
+                <section>
+                    <div class="aligned">
+                        <img class="big" src="assets/resources/organic.png">
+                        <span class="output" id="organic">0</span><span> organic</span>
+                    </div>
+                    <div class="aligned">
+                        <img class="big" src="assets/resources/carbon.png">
+                        <span class="output" id="carbon">0</span><span> carbon</span>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </body>
+</html>

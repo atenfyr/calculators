@@ -6,19 +6,15 @@ var amperage = {
     "lab": 3,
     "condense": 6,
     "research": 2,
-
     "medshred": 1.5,
     "largeshred": 3,
-
     "smallprint": 1,
     "medprint": 2,
     "largeprint": 3,
-
     "medrover": 0.5,
     "largerover": 1,
     "tractor": 0.075,
     "buggy": 0.019,
-
     "drill": 1,
     "oxygenator": 1.35,
     "inhibitor": 0.2,
