@@ -7,11 +7,9 @@ var storage = {
     "tractor": 4,
     "buggy": 4,
     "backpack": 10,
-}
-
-var resources = {
+    "power": 32,
     "organic": 100,
-    "carbon": 300
+    "carbon": 300,
 }
 
 function truncateValue(val) { // round to 2 decimal digits
@@ -19,7 +17,7 @@ function truncateValue(val) { // round to 2 decimal digits
 }
 
 function parseValue(amps, factor) {
-    return Math.ceil(amps/factor);
+    return truncateValue(amps/factor);
 }
 
 function updateFields(total) {
@@ -29,7 +27,7 @@ function updateFields(total) {
         if (elem.id === "total") {
             elem.innerHTML = truncateValue(total);
         } else {
-            elem.innerHTML = parseValue(total, resources[elem.id])
+            elem.innerHTML = parseValue(total, storage[elem.id])
         }
     }
 }

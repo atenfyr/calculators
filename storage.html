@@ -62,12 +62,32 @@
                 </section>
 
                 <section>
+                    <h2>Resources</h2>
+                    <div>
+                        <img class="small" src="assets/resources/organic.png"><label for="organic">Organic</label>
+                        <input type="number" placeholder="0" min="0" id="organic" onchange="calc()">
+                    </div>
+                    <div>
+                        <img class="small" src="assets/resources/carbon.png"><label for="carbon">Carbon</label>
+                        <input type="number" placeholder="0" min="0" id="carbon" onchange="calc()">
+                    </div>
+                    <div>
+                        <img class="small" src="assets/resources/power.png"><label for="power">Power</label>
+                        <input type="number" placeholder="0" min="0" id="power" onchange="calc()">
+                    </div>
+                </section>
+
+                <section>
                     <h2>Miscellaneous</h2>
                     <div>
                         <img class="small" src="assets/misc/backpack.png"><label for="backpack">Backpack</label>
                         <input type="number" placeholder="0" min="0" id="backpack" onchange="calc()">
                     </div>
                 </section>
+
+                <!-- this makes it so that flexbox doesn't get angry at me -->
+                <section class="placeholder"></section>
+                <section class="placeholder"></section>
             </div>
             <hr>
             <div class="outputs">
@@ -80,11 +100,15 @@
                 <section>
                     <div class="aligned">
                         <img class="big" src="assets/resources/organic.png">
-                        <span class="output" id="organic">0</span><span> organic</span>
+                        <span class="output" id="organic">0</span><span> <abbr title="Organic can be burned in a small generator, allowing the generator to emit 1 U/s over 100 seconds.">organic</abbr></span>
                     </div>
                     <div class="aligned">
                         <img class="big" src="assets/resources/carbon.png">
-                        <span class="output" id="carbon">0</span><span> carbon</span>
+                        <span class="output" id="carbon">0</span><span> <abbr title="Carbon can be burned in a medium generator, allowing the generator to emit 3 U/s over 100 seconds.">carbon</abbr></span>
+                    </div>
+                    <div class="aligned">
+                        <img class="big" src="assets/resources/power.png">
+                        <span class="output" id="power">0</span><span> <abbr title="Power nuggets were removed in the Crafting Update but can still be obtained by loading old saves. They can emit up to 4 U/s but only hold 32 units.">power</abbr></span>
                     </div>
                 </section>
             </div>
