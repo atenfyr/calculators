@@ -17,6 +17,10 @@ function truncateValue(val) { // round to 2 decimal digits
 }
 
 function parseValue(amps, factor) {
+    return Math.ceil(amps/factor)
+}
+
+function parseValueTruncate(amps, factor) {
     return truncateValue(amps/factor);
 }
 
@@ -26,8 +30,10 @@ function updateFields(total) {
         var elem = elems[i];
         if (elem.id === "total") {
             elem.innerHTML = truncateValue(total);
+        } else if (elem.className.indexOf("truncate") > -1) {
+            elem.innerHTML = parseValueTruncate(total, storage[elem.id]);
         } else {
-            elem.innerHTML = parseValue(total, storage[elem.id])
+            elem.innerHTML = parseValue(total, storage[elem.id]);
         }
     }
 }
