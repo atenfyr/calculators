@@ -1,3 +1,5 @@
+"use strict";
+
 var storage = {
     "smallbatt": 32,
     "medbatt": 256,
@@ -10,18 +12,28 @@ var storage = {
     "power": 32,
     "organic": 100,
     "carbon": 300,
+    "snail": 2048
 }
+
+var spaceSnailShown = false;
 
 function truncateValue(val) { // round to 2 decimal digits
     return parseFloat(val).toFixed(2);
 }
 
 function parseValue(amps, factor) {
-    return Math.ceil(amps/factor)
+    return Math.ceil(amps/factor);
 }
 
 function parseValueTruncate(amps, factor) {
     return truncateValue(amps/factor);
+}
+
+function unhideSnail() {
+    if (document.getElementById("total").innerHTML === "13.37" && !spaceSnailShown) {
+        document.getElementById("snail_wrapper").removeAttribute("style");
+        spaceSnailShown = true
+    }
 }
 
 function updateFields(total) {
@@ -42,7 +54,13 @@ function calc() {
     var total = 0;
     for (var i in storage) {
         if (storage.hasOwnProperty(i)) {
-            total += storage[i]*(parseInt(document.getElementById(i).value) || 0);
+            var elem = document.getElementById(i);
+            if (i === "snail" && !spaceSnailShown) continue;
+            if (elem.step === "any") {
+                total += storage[i]*(parseFloat(elem.value) || 0);
+            } else {
+                total += storage[i]*(parseInt(elem.value) || 0);
+            }
         }
     }
 

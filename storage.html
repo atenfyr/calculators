@@ -59,21 +59,25 @@
                         <img class="small" src="assets/input/rover.png"><label for="buggy">Buggy</label>
                         <input type="number" placeholder="0" min="0" id="buggy" onchange="calc()">
                     </div>
+                    <div id="snail_wrapper" style="display: none;">
+                        <img class="small" src="assets/misc/snail.png"><label for="snail">Space Snail</label>
+                        <input type="number" placeholder="0" min="0" id="snail" onchange="calc()">
+                    </div>
                 </section>
 
                 <section>
                     <h2>Resources</h2>
                     <div>
                         <img class="small" src="assets/resources/organic.png"><label for="organic">Organic</label>
-                        <input type="number" placeholder="0" min="0" id="organic" onchange="calc()">
+                        <input type="number" placeholder="0" min="0" id="organic" step="any" onchange="calc()">
                     </div>
                     <div>
                         <img class="small" src="assets/resources/carbon.png"><label for="carbon">Carbon</label>
-                        <input type="number" placeholder="0" min="0" id="carbon" onchange="calc()">
+                        <input type="number" placeholder="0" min="0" id="carbon" step="any" onchange="calc()">
                     </div>
                     <div>
                         <img class="small" src="assets/resources/power.png"><label for="power">Power</label>
-                        <input type="number" placeholder="0" min="0" id="power" onchange="calc()">
+                        <input type="number" placeholder="0" min="0" id="power" step="any" onchange="calc()">
                     </div>
                 </section>
 
@@ -94,7 +98,7 @@
                 <section>
                     <div class="aligned">
                         <img class="big" src="assets/output/amps.png">
-                        <span class="output" id="total">0.00</span><span> units</span>
+                        <span class="output" id="total" onclick="unhideSnail()">0.00</span><span> units</span>
                     </div>
                 </section>
                 <section>
