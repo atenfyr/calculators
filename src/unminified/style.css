@@ -132,6 +132,10 @@ label {
     font-weight: bold;
 }
 
+label[title] {
+    text-decoration: dotted underline;
+}
+
 .output {
     font-weight: bold;
 }
@@ -145,8 +149,10 @@ label {
 hr {
     display: block;
     height: 1px;
+    min-width: 100%;
     border: 0;
     border-top: 1px solid rgb(230,230,230);
     margin: 1em 0;
+    margin-left: -10px;
     padding: 0;
 }

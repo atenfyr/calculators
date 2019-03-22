@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="robots" content="index, nofollow">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: 'unsafe-inline'">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/png" href="assets/misc/tank.png">
+        <title>EXO Dynamics Oxygen Storage Calculator</title>
+        <link rel="stylesheet" href="src/style.min.css">
+        <link rel="stylesheet" href="src/oxygen.min.css">
+        <script src="src/unminified/oxygen.js"></script>
+        <script src="src/responsive.min.js"></script>
+    </head>
+    <body onload="calc()">
+        <div id="navbar" class="closed">
+            <a href="./">Home</a>
+            <a href="consumption.html">Power Consumption</a>
+            <a href="production.html">Power Production</a>
+            <a href="storage.html">Power Storage</a>
+            <a class="active">Oxygen Storage</a>
+            <img class="menu-icon" src="assets/hamburger.png" onclick="expand()">
+        </div>
+        <div id="content">
+            <span class="header">
+                <a href="./"><img class="big" src="assets/exo.png"><h1>EXO Dynamics Oxygen Storage Calculator</h1></a>
+            </span>
+            <div class="inputs">
+                <section>
+                    <h2>Oxygen Storage</h2> 
+                    <div>
+                        <img class="small" src="assets/misc/backpack.png"><label for="backpack">Backpack</label>
+                        <input type="number" placeholder="0" min="0" id="backpack" onchange="calc()">
+                    </div>
+                    <div>
+                        <img class="small" src="assets/misc/tank.png"><label for="tank">Small Oxygen Tank</label>
+                        <input type="number" placeholder="0" min="0" id="tank" step="any" onchange="calc()">
+                    </div>
+                    <div>
+                        <img class="small" src="assets/misc/tank.png"><label for="filters">Oxygen Filters</label>
+                        <input type="number" placeholder="0" min="0" id="filters" step="any" onchange="calc()">
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Resources</h2>
+                    <div>
+                        <img class="small" src="assets/resources/oxygen.png"><label for="oxygen">Oxygen</label>
+                        <input type="number" placeholder="0" min="0" id="oxygen" step="any" onchange="calc()">
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Miscellaneous</h2>
+                    <div>
+                        <img class="small" src="assets/output/amps.png"><label for="units">Units of power</label>
+                        <input type="number" placeholder="0" min="0" id="units" step="any" onchange="calc()">
+                    </div>
+                </section>
+            </div>
+            <hr>
+            <div class="outputs">
+                <section>
+                    <div class="aligned">
+                        <img class="big" src="assets/misc/tank.png">
+                        <span class="output" id="total">0.00</span><span> tanks</span>
+                    </div>
+                    <div class="aligned">
+                        <img class="big" src="assets/output/amps.png">
+                        <span class="output truncate" id="units">0.00</span><span> <abbr title="Using the Portable Oxygenator, 10 units of power produce 1 full tank of oxygen.">units</abbr></span>
+                    </div>
+                    <div class="aligned">
+                        <img class="big" src="assets/misc/tank.png">
+                        <span class="output" id="filters">0</span><span> stacks of oxygen filters</span>
+                    </div>
+                </section>
+                <section>
+                    <div class="aligned">
+                        <img class="big" src="assets/misc/time.png">
+                        <span class="output time" id="idle">0.00</span><span> of air</span>
+                    </div>
+                    <div class="aligned">
+                        <img class="big" src="assets/misc/time.png">
+                        <span class="output time" id="sprint">0.00</span><span> of air (sprinting)</span>
+                    </div>
+                </section>
+                <section>
+                    <div class="aligned">
+                        <img class="big" src="assets/resources/oxygen.png">
+                        <span class="output truncate" id="oxygen">0.00</span><span> <abbr title="Oxygen nuggets were removed in the Crafting Update but can still be obtained by loading old saves. They can only fill up your backpack's main tank and a single stack of oxygen can only fill half of it.">oxygen</abbr></span>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </body>
+</html>
