@@ -8,7 +8,7 @@ var storage = {
     "units": 0.1,
     "idle": 6/7,
     "sprint": 6/5
-}
+};
 
 function truncateValue(val) { // round to 2 decimal digits
     return parseFloat(val).toFixed(2);
@@ -24,16 +24,18 @@ function parseValueTruncate(amps, factor) {
 
 function parseValueSeconds(amps, factor) {
     var time = amps/factor;
-    var mins = Math.floor(time);
-    var secs = Math.floor((time-mins)*60);
+    var mins = Math.floor(time%60);
+    var secs = Math.floor((time*60)%60);
+    var hours = Math.floor((time/60)%24);
+    var days = Math.floor(time/1440);
 
-    if (mins > 0 && secs !== 0) {
-        return mins.toString() + " minutes " + secs.toString() + " seconds";
-    } else if (mins === 0) {
-        return secs.toString() + " seconds";
-    } else {
-        return mins.toString() + " minutes";
-    }
+    var str = "";
+    if (time === 0) return "0 seconds";
+    if (days > 0) str += days + " days ";
+    if (hours > 0) str += hours + " hours ";
+    if (mins > 0) str += mins + " minutes ";
+    if (secs > 0) str += secs + " seconds ";
+    return str.slice(0, -1);
 }
 
 function updateFields(total) {
