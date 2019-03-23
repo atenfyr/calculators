@@ -26,7 +26,7 @@ var amperage = {
     "drill1": 0.25,
     "drill2": 0.5,
     "drill3": 0.75
-}
+};
 
 var can_be_slowed_down = [
     "furnace",
@@ -35,11 +35,10 @@ var can_be_slowed_down = [
     "condense",
     "research",
     "medshred",
-    "largeshred",
     "smallprint",
     "medprint",
     "largeprint"
-]
+];
 
 var power = {
     "rtgs": 4,
@@ -53,6 +52,17 @@ var power = {
     "shelter": 1,
     "smallbatt": 1,
     "medbatt": 3
+};
+
+// very much experimental and usually not accurate
+function largeShredderSpeed(speed) {
+    if (speed >= 1) return 3;
+    if (speed <= 0) return 0;
+
+    var calculatedAmperage = (3.2446123087683*Math.log(speed*100))-11.846429094476;
+    if (calculatedAmperage < 0.25) return 0.25;
+    if (calculatedAmperage > 3) return 3;
+    return calculatedAmperage;
 }
 
 function truncateValue(val) { // round to 2 decimal digits
@@ -70,7 +80,7 @@ function updateFields(total) {
         if (elem.id === "total") {
             elem.innerHTML = truncateValue(total);
         } else {
-            elem.innerHTML = parseValue(total, power[elem.id])
+            elem.innerHTML = parseValue(total, power[elem.id]);
         }
     }
 }
@@ -87,7 +97,11 @@ function calc() {
             if (can_be_slowed_down.indexOf(i) !== -1) {
                 adjusted *= speed;
             }
-            total += adjusted*(parseInt(document.getElementById(i).value) || 0);
+            if (i === "largeshred") {
+                total = largeShredderSpeed(speed)*(parseInt(document.getElementById(i).value) || 0);
+            } else {
+                total += adjusted*(parseInt(document.getElementById(i).value) || 0);
+            }
         }
     }
 
