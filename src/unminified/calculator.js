@@ -98,7 +98,7 @@ function calc() {
                 adjusted *= speed;
             }
             if (i === "largeshred") {
-                total = largeShredderSpeed(speed)*(parseInt(document.getElementById(i).value) || 0);
+                total += largeShredderSpeed(speed)*(parseInt(document.getElementById(i).value) || 0);
             } else {
                 total += adjusted*(parseInt(document.getElementById(i).value) || 0);
             }
