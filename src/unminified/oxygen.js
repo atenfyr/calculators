@@ -6,7 +6,7 @@ var storage = {
     "filters": 8,
     "oxygen": 0.5,
     "units": 0.1,
-    "idle": 6/7,
+    "idle": 6/7.25,
     "sprint": 6/5
 };
 
