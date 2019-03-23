@@ -93,14 +93,17 @@ function calc() {
 
     for (var i in amperage) {
         if (amperage.hasOwnProperty(i)) {
-            var adjusted = amperage[i];
-            if (can_be_slowed_down.indexOf(i) !== -1) {
-                adjusted *= speed;
-            }
-            if (i === "largeshred") {
-                total += largeShredderSpeed(speed)*(parseInt(document.getElementById(i).value) || 0);
-            } else {
-                total += adjusted*(parseInt(document.getElementById(i).value) || 0);
+            var quantity = parseInt(document.getElementById(i).value) || 0;
+            if (quantity > 0) { // optimization specific only to this function so that we're not calling log every single time unless we need to
+                if (i === "largeshred") {
+                    total += largeShredderSpeed(speed)*quantity;
+                } else {
+                    var adjusted = amperage[i];
+                    if (can_be_slowed_down.indexOf(i) !== -1) {
+                        adjusted *= speed;
+                    }
+                    total += adjusted*quantity;
+                }
             }
         }
     }
