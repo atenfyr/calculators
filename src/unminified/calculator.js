@@ -60,7 +60,7 @@ function largeShredderSpeed(speed) {
     if (speed <= 0) return 0;
 
     var calculatedAmperage = (3.2446123087683*Math.log(speed*100))-11.846429094476;
-    if (calculatedAmperage < 0.25) return 0.25;
+    if (calculatedAmperage < 0.26) return 0.01; // the speed of the shredder is capped at 60 seconds, so at speeds this slow you only need to have more than 0 U/s of power
     if (calculatedAmperage > 3) return 3;
     return calculatedAmperage;
 }
