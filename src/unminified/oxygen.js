@@ -11,11 +11,14 @@ var storage = {
 };
 
 function truncateValue(val) { // round to 2 decimal digits
-    return parseFloat(val).toFixed(2);
+    var str = parseFloat(val).toLocaleString();
+    if (str.indexOf(".") > -1) str += "00";
+    else str += ".00";
+    return str.match(/^[^.]+\.?\d{0,2}/)[0];
 }
 
 function parseValue(amps, factor) {
-    return Math.ceil(amps/factor);
+    return Math.ceil(amps/factor).toLocaleString();
 }
 
 function parseValueTruncate(amps, factor) {

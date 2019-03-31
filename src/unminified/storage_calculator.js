@@ -13,16 +13,19 @@ var storage = {
     "organic": 100,
     "carbon": 300,
     "snail": 2048
-}
+};
 
 var spaceSnailShown = false;
 
 function truncateValue(val) { // round to 2 decimal digits
-    return parseFloat(val).toFixed(2);
+    var str = parseFloat(val).toLocaleString();
+    if (str.indexOf(".") > -1) str += "00";
+    else str += ".00";
+    return str.match(/^[^.]+\.?\d{0,2}/)[0];
 }
 
 function parseValue(amps, factor) {
-    return Math.ceil(amps/factor);
+    return Math.ceil(amps/factor).toLocaleString();
 }
 
 function parseValueTruncate(amps, factor) {
@@ -32,7 +35,7 @@ function parseValueTruncate(amps, factor) {
 function unhideSnail() {
     if (document.getElementById("total").innerHTML === "13.37" && !spaceSnailShown) {
         document.getElementById("snail_wrapper").removeAttribute("style");
-        spaceSnailShown = true
+        spaceSnailShown = true;
     }
 }
 
