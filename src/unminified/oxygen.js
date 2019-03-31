@@ -10,11 +10,12 @@ var storage = {
     "sprint": 6/5
 };
 
+var storedRegex = /^[^.]+\.?\d{0,2}/;
 function truncateValue(val) { // round to 2 decimal digits
     var str = parseFloat(val).toLocaleString();
     if (str.indexOf(".") > -1) str += "00";
     else str += ".00";
-    return str.match(/^[^.]+\.?\d{0,2}/)[0];
+    return str.match(storedRegex)[0];
 }
 
 function parseValue(amps, factor) {
@@ -33,11 +34,11 @@ function parseValueSeconds(amps, factor) {
     var days = Math.floor(time/1440);
 
     var str = "";
-    if (time === 0) return "0 seconds";
     if (days > 0) str += days + " days ";
     if (hours > 0) str += hours + " hours ";
     if (mins > 0) str += mins + " minutes ";
     if (secs > 0) str += secs + " seconds ";
+    if (str === "") return "0 seconds";
     return str.slice(0, -1);
 }
 

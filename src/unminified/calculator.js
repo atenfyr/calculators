@@ -65,11 +65,12 @@ function largeShredderSpeed(speed) {
     return calculatedAmperage;
 }
 
+var storedRegex = /^[^.]+\.?\d{0,2}/;
 function truncateValue(val) { // round to 2 decimal digits
     var str = parseFloat(val).toLocaleString();
     if (str.indexOf(".") > -1) str += "00";
     else str += ".00";
-    return str.match(/^[^.]+\.?\d{0,2}/)[0];
+    return str.match(storedRegex)[0];
 }
 
 function parseValue(amps, factor) {
