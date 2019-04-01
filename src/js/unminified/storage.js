@@ -17,22 +17,6 @@ var storage = {
 
 var spaceSnailShown = false;
 
-var storedRegex = /^[^.]+\.?\d{0,2}/;
-function truncateValue(val) { // round to 2 decimal digits
-    var str = parseFloat(val).toLocaleString();
-    if (str.indexOf(".") > -1) str += "00";
-    else str += ".00";
-    return str.match(storedRegex)[0];
-}
-
-function parseValue(amps, factor) {
-    return Math.ceil(amps/factor).toLocaleString();
-}
-
-function parseValueTruncate(amps, factor) {
-    return truncateValue(amps/factor);
-}
-
 function unhideSnail() {
     if (document.getElementById("total").innerHTML === "13.37" && !spaceSnailShown) {
         document.getElementById("snail_wrapper").removeAttribute("style");

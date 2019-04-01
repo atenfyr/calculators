@@ -65,18 +65,6 @@ function largeShredderSpeed(speed) {
     return calculatedAmperage;
 }
 
-var storedRegex = /^[^.]+\.?\d{0,2}/;
-function truncateValue(val) { // round to 2 decimal digits
-    var str = parseFloat(val).toLocaleString();
-    if (str.indexOf(".") > -1) str += "00";
-    else str += ".00";
-    return str.match(storedRegex)[0];
-}
-
-function parseValue(amps, factor) {
-    return Math.ceil(amps/factor).toLocaleString();
-}
-
 function updateFields(total) {
     var elems = document.getElementsByClassName("output");
     for (var i = 0; i < elems.length; i++) {
@@ -89,7 +77,7 @@ function updateFields(total) {
     }
 }
 
-function calc() {
+function calcConsumption() {
     var total = 0;
     var speed = parseInt(document.getElementById("speed").value);
     if (isNaN(speed) || speed < 0 || speed > 100) speed = 100;
@@ -115,7 +103,7 @@ function calc() {
     updateFields(total);
 }
 
-function calc_amps() {
+function calcProduction() {
     var total = 0;
     for (var i in power) {
         if (power.hasOwnProperty(i)) {

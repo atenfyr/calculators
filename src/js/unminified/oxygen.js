@@ -10,38 +10,6 @@ var storage = {
     "sprint": 6/5
 };
 
-var storedRegex = /^[^.]+\.?\d{0,2}/;
-function truncateValue(val) { // round to 2 decimal digits
-    var str = parseFloat(val).toLocaleString();
-    if (str.indexOf(".") > -1) str += "00";
-    else str += ".00";
-    return str.match(storedRegex)[0];
-}
-
-function parseValue(amps, factor) {
-    return Math.ceil(amps/factor).toLocaleString();
-}
-
-function parseValueTruncate(amps, factor) {
-    return truncateValue(amps/factor);
-}
-
-function parseValueSeconds(amps, factor) {
-    var time = amps/factor;
-    var mins = Math.floor(time%60);
-    var secs = Math.floor((time*60)%60);
-    var hours = Math.floor((time/60)%24);
-    var days = Math.floor(time/1440);
-
-    var str = "";
-    if (days > 0) str += days + " days ";
-    if (hours > 0) str += hours + " hours ";
-    if (mins > 0) str += mins + " minutes ";
-    if (secs > 0) str += secs + " seconds ";
-    if (str === "") return "0 seconds";
-    return str.slice(0, -1);
-}
-
 function updateFields(total) {
     var elems = document.getElementsByClassName("output");
     for (var i = 0; i < elems.length; i++) {
