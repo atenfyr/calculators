@@ -55,14 +55,13 @@ var power = {
 };
 
 // very much experimental and usually not accurate
-function largeShredderSpeed(speed) {
-    if (speed >= 1) return 3;
+function shredderSpeed(speed, cap) {
+    if (speed >= 1) return cap;
     if (speed <= 0) return 0;
 
     var calculatedAmperage = (3.2446123087683*Math.log(speed*100))-11.846429094476;
-    if (calculatedAmperage < 0.26) return 0.01; // the speed of the shredder is capped at 60 seconds, so at speeds this slow you only need to have more than 0 U/s of power
-    if (calculatedAmperage > 3) return 3;
-    return calculatedAmperage;
+    if (calculatedAmperage > cap) return cap;
+    return calculatedAmperage/(3/cap);
 }
 
 function updateFields(total) {
@@ -87,8 +86,8 @@ function calcConsumption() {
         if (amperage.hasOwnProperty(i)) {
             var quantity = parseInt(document.getElementById(i).value) || 0;
             if (quantity > 0) { // optimization specific only to this function so that we're not calling log every single time unless we need to
-                if (i === "largeshred") {
-                    total += largeShredderSpeed(speed)*quantity;
+                if (i.indexOf("shred") > -1) {
+                    total += shredderSpeed(speed, amperage[i])*quantity;
                 } else {
                     var adjusted = amperage[i];
                     if (can_be_slowed_down.indexOf(i) !== -1) {
