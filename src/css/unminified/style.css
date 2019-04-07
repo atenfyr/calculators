@@ -69,12 +69,16 @@ body {
         position: absolute;
         right: 0;
         top: 0;
-    }    
+    }
 }
 
 a {
     color: inherit;
     text-decoration: inherit;
+}
+
+a.underline {
+    text-decoration: underline;
 }
 
 a.active {

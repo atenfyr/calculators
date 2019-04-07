@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="robots" content="index, nofollow">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: 'unsafe-inline'">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/png" href="assets/resources/hydrazine.png">
+        <title>EXO Dynamics Rocket Fuel Storage Calculator</title>
+        <link rel="stylesheet" href="src/css/style.min.css">
+        <link rel="stylesheet" href="src/css/rocketfuel.min.css">
+        <script src="src/js/shared.min.js"></script>
+        <script src="src/js/rocketfuel.min.js"></script>
+        <script src="src/js/responsive.min.js"></script>
+    </head>
+    <body onload="calc()">
+        <div id="navbar" class="closed">
+            <a href="./">Home</a>
+            <a href="consumption.html">Power Consumption</a>
+            <a href="production.html">Power Production</a>
+            <a href="storage.html">Power Storage</a>
+            <a href="scrap.html">Scrap</a>
+            <a class="active">Rocket Fuel Storage</a>
+            <img class="menu-icon" src="assets/hamburger.png" onclick="expand()">
+        </div>
+        <div id="content">
+            <span class="header">
+                <a href="./"><img class="big" src="assets/exo.png"><h1>EXO Dynamics Rocket Fuel Storage Calculator</h1></a>
+            </span>
+            <div class="inputs">
+                <section>
+                    <h2>Thrusters</h2> 
+                    <div>
+                        <img class="small" src="assets/misc/thruster.png"><label for="solidfuel">Solid-Fuel Thruster</label>
+                        <input type="number" placeholder="0" min="0" id="solidfuel" step="any" onchange="calc()">
+                    </div>
+                    <div>
+                        <img class="small" src="assets/misc/thruster.png"><label for="fullthruster">Hydrazine Thruster (full)</label>
+                        <input type="number" placeholder="0" min="0" id="fullthruster" step="any" onchange="calc()">
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Resources</h2>
+                    <div>
+                        <img class="small" src="assets/resources/hydrazine.png"><label for="hydrazine">Hydrazine</label>
+                        <input type="number" placeholder="0" min="0" id="hydrazine" step="any" onchange="calc()">
+                    </div>
+                    <div>
+                        <img class="small" src="assets/resources/ammonium.png"><label for="ammonium">Ammonium</label>
+                        <input type="number" placeholder="0" min="0" id="ammonium" step="any" onchange="calc()">
+                    </div>
+                </section>
+            </div>
+            <hr>
+            <div class="outputs">
+                <section>
+                    <div class="aligned">
+                        <img class="big" src="assets/resources/hydrazine.png">
+                        <span class="output" id="total">0.00</span><span> <abbr title="Fuel units (or &quot;charges&quot;) are a measure of rocket fuel storage. One fuel unit is expended once a rocket has left the surface of a planet or switched between planets, but no fuel is required to land. One fuel unit will also keep a thruster that is not on a shuttle running for about 1.6 seconds.">fuel units</abbr></span>
+                    </div>
+                    <div class="aligned">
+                        <img class="big" src="assets/misc/thruster.png">
+                        <span class="output" id="solidfuel">0</span><span> solid-fuel thrusters</span>
+                    </div>
+                </section>
+                <section>
+                    <div class="aligned">
+                        <img class="big" src="assets/misc/time.png">
+                        <span class="output time" id="flight">0.00</span><span> of <abbr title="This value only applies when an active thruster is not on a shuttle.">flight</abbr></span>
+                    </div>
+                </section>
+                <section>
+                    <div class="aligned">
+                        <img class="big" src="assets/resources/hydrazine.png">
+                        <span class="output truncate" id="hydrazine">0.00</span><span> hydrazine</span>
+                    </div>
+                    <div class="aligned">
+                        <img class="big" src="assets/resources/ammonium.png">
+                        <span class="output truncate" id="ammonium">0.00</span><span> ammonium</span>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </body>
+</html>
