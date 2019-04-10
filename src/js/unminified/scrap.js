@@ -2,16 +2,17 @@
 
 var res = {
     "aluminum": 1,
-    "aluminumAlloy": 1.5,
+    "aluminumAlloy": 1.5, // estimate
     "ammonium": 0.5,
-    "carbon": 0.5,
+    "carbon": 0.5, // estimate
     "ceramic": 0.5,
     "clay": 0.25,
     "compound": 0.25,
     "copper": 1,
     "diamond": 2,
+    "explosivePowder": 0,
     "glass": 0.5,
-    "graphene": 1.5,
+    "graphene": 1.5, // estimate
     "graphite": 0.25,
     "hematite": 0.75,
     "iron": 1.5,
@@ -19,19 +20,19 @@ var res = {
     "lithium": 2,
     "malachite": 0.5,
     "nanocarbonAlloy": 2,
-    "organic": 0.25,
-    "plastic": 1,
+    "organic": 0.25, // estimate
+    "plastic": 1, // estimate
     "quartz": 0.25,
     "resin": 0.25,
     "rubber": 1,
-    "silicone": 1.5,
+    "silicone": 1.5, // estimate
     "sphalerite": 0.25,
-    "steel": 2,
-    "titanite": 0.5,
-    "titanium": 1,
-    "titaniumAlloy": 1.5,
+    "steel": 2, // estimate
+    "titanite": 0.5, // estimate
+    "titanium": 1, // estimate
+    "titaniumAlloy": 1.5, // estimate
     "tungsten": 1.5,
-    "tungstenCarbide": 1.5,
+    "tungstenCarbide": 1.5, // estimate
     "wolframite": 0.75,
     "zinc": 0.5,
 };
@@ -39,6 +40,7 @@ var res = {
 var storage = {
     "beacon": res.quartz,
     "canister": res.resin,
+    "dynamite": res.explosivePowder,
     "extenders": res.copper/5,
     "filters": res.resin,
     "packager": res.graphite,
@@ -80,31 +82,10 @@ var storage = {
     "splitter": res.copper+res.graphite,
     "winch": res.tungsten+res.rubber,
 
-    "ddropship": (res.silicone/2)+(res.plastic/2),
-    "ddropshipdoor": (res.silicone/5)+(res.plastic/5),
-    "ddropshiplid": (res.silicone/5)+(res.plastic/5),
-    "dextender": res.copper/5,
-    "dsolarpanel": (res.copper*0.75)+(res.glass*0.75),
-    "dsolarcell": (res.copper/4)+(res.glass/4),
-    "dwindturbine": (res.ceramic*0.75)+(res.glass*0.75),
-    "dwindturbineblade": (res.ceramic/4)+(res.glass/4),
-    "dmediumgenerator": res.aluminum+res.tungsten,
-    "droverseat": res.compound*2,
-    "droverwheel": res.rubber/4,
-    "dtether": res.compound/11,
-    "dcatalog": res.iron,
-    "darraysupport": 1.5,
-    "darraypanel": 0.5,
-    "darraystrut": 0.5,
-    "darraycell": 1.5,
-    "darrayframe": 0.75,
-    "darraylarge": 1.5,
-    "darraysmall": res.copper/4,
-
     "cones": 0.02,
 };
 
-function updateFields(total) {
+function updateFields(total, explosions) {
     var elems = document.getElementsByClassName("output");
     for (var i = 0; i < elems.length; i++) {
         var elem = elems[i];
@@ -116,20 +97,31 @@ function updateFields(total) {
             elem.innerHTML = parseValue(total, storage[elem.id]);
         }
     }
+    document.getElementById("explosions").innerHTML = explosions;
 }
 
 function calc() {
     var total = 0;
+    var explosions = 0;
     for (var i in storage) {
         if (storage.hasOwnProperty(i)) {
             var elem = document.getElementById(i);
             if (elem.step === "any") {
                 total += storage[i]*(parseFloat(elem.value) || 0);
             } else {
-                total += storage[i]*(parseInt(elem.value) || 0);
+                var num = parseInt(elem.value) || 0;
+                if (i === "dynamite") explosions += num;
+                total += storage[i]*num;
             }
         }
     }
+    for (var i in res) {
+        if (res.hasOwnProperty(i)) {
+            var num = parseFloat(document.getElementById(i).value) || 0;
+            if (i === "explosivePowder") explosions += num;
+            total += res[i]*num;
+        }
+    }
 
-    updateFields(total);
+    updateFields(total, explosions);
 }
