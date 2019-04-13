@@ -59,9 +59,10 @@ function shredderSpeed(speed, cap) {
     if (speed >= 1) return cap;
     if (speed <= 0) return 0;
 
-    var calculatedAmperage = (3.2446123087683*Math.log(speed*100))-11.846429094476;
+    var calculatedAmperage = ((3.2446123087683*Math.log(speed*100))-11.846429094476)/(3/cap);
     if (calculatedAmperage > cap) return cap;
-    return calculatedAmperage/(3/cap);
+    if (calculatedAmperage < 0) return 0.01;
+    return calculatedAmperage;
 }
 
 function updateFields(total) {
