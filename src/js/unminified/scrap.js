@@ -30,9 +30,9 @@ var res = {
     "steel": 2, // estimate
     "titanite": 0.5, // estimate
     "titanium": 1, // estimate
-    "titaniumAlloy": 1.5, // estimate
+    "titaniumAlloy": 1.5,
     "tungsten": 1.5,
-    "tungstenCarbide": 1.5, // estimate
+    "tungstenCarbide": 1.5,
     "wolframite": 0.75,
     "zinc": 0.5,
 };
