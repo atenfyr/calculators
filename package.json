@@ -1,0 +1,19 @@
+{
+  "name": "calculators",
+  "version": "1.0.0",
+  "description": "A handful of Astroneer calculators.",
+  "main": "src/js/minifyall.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atenfyr/calculators.git"
+  },
+  "author": "Atenfyr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/atenfyr/calculators/issues"
+  },
+  "homepage": "https://github.com/atenfyr/calculators#readme",
+  "dependencies": {
+    "uglify-js": "^3.5.4"
+  }
+}
