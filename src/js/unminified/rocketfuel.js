@@ -5,7 +5,7 @@ var storage = {
     "fullthruster": 24,
     "hydrazine": 8,
     "ammonium": 4,
-    "flight": 720/19,
+    "flight": 720/19
 };
 
 function updateFields(total) {

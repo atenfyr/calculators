@@ -25,7 +25,15 @@ var amperage = {
     "analyzer": 0.5,
     "drill1": 0.25,
     "drill2": 0.5,
-    "drill3": 0.75
+    "drill3": 0.75,
+
+    "sylva": 5,
+    "desolo": 8,
+    "calidor": 12,
+    "vesania": 16,
+    "novus": 21,
+    "glacio": 26,
+    "atrox": 30
 };
 
 var can_be_slowed_down = [

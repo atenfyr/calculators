@@ -38,6 +38,16 @@ var resourceIndex = {
     "zinc": 0.5,
 };
 
+/*
+    The goal of this program is to simplify the values in the data table given below into numbers that are given to the client.
+    --Entry Syntax Guide--
+        If an entry is a number, it is already simplified and does not need to be processed further.
+        If an entry is a string, the value of the entry is the value of the resource designated by the string.
+        If an entry is an array with the first element being a string and the second element being a number, the value of the entry is the value of the resource designated by the string times the number.
+        If an entry is an array that does not meet any other criteria, all of the array's elements go through the same process as a regular entry, with the value of the entry being equal to the sum of all its elements.
+        If an entry does not meet any of the above criteria, the entry is invalid.
+*/
+
 var entryIndex = {
     "beacon": "quartz",
     "canister": "resin",
@@ -71,13 +81,13 @@ var entryIndex = {
     "hydrazinethruster": ["titaniumAlloy", "tungsten"],
     "mediumbattery": ["lithium", "zinc"],
     "mediumgenerator": ["aluminum", "tungsten"],
-    "mediumprinter": [["compound", 2]],
-    "mediumshredder": [["iron", 2]],
+    "mediumprinter": ["compound", 2],
+    "mediumshredder": ["iron", 2],
     "mediumsolar": ["copper","glass"],
-    "mediumstorage": [["resin", 2]],
+    "mediumstorage": ["resin", 2],
     "mediumwind": ["ceramic", "glass"],
     "oxygenator": ["ceramic", "aluminum"],
-    "roverseat": [["compound", 2]],
+    "roverseat": ["compound", 2],
     "rtg": ["nanocarbonAlloy", "lithium"],
     "solidfuelthruster": ["ammonium", "aluminum"],
     "splitter": ["copper", "graphite"],
@@ -88,17 +98,13 @@ var entryIndex = {
 
 function parseData(key) {
     var data = entryIndex[key] || key;
-    if (typeof data === "string") return resourceIndex[data];
     if (typeof data === "number") return data;
+    if (typeof data === "string") return resourceIndex[data];
     if (typeof data === "object") {
-        if (data.length === 2 && typeof data[0] === "string" && typeof data[1] === "number") {
-            return resourceIndex[data[0]]*data[1];
-        }
+        if (data.length === 2 && typeof data[0] === "string" && typeof data[1] === "number") return resourceIndex[data[0]]*data[1];
         var total = 0;
         for (var i in data) {
-            if (data.hasOwnProperty(i)) {
-                total += parseData(data[i]);
-            }
+            if (data.hasOwnProperty(i)) total += parseData(data[i]);
         }
         return total;
     }
