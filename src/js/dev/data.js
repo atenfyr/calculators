@@ -22,15 +22,15 @@ var resourceIndex = {
     "malachite": 0.5,
     "nanocarbonAlloy": 2,
     "organic": 0.25, // estimate
-    "plastic": 1, // estimate
+    "plastic": 0.5,
     "quartz": 0.25,
     "resin": 0.25,
     "rubber": 1,
-    "silicone": 1.5, // estimate
+    "silicone": 1.5,
     "sphalerite": 0.25,
-    "steel": 2, // estimate
-    "titanite": 0.5, // estimate
-    "titanium": 1, // estimate
+    "steel": 2,
+    "titanite": 0.5,
+    "titanium": 1,
     "titaniumAlloy": 1.5,
     "tungsten": 1.5,
     "tungstenCarbide": 1.5,
@@ -94,6 +94,7 @@ var entryIndex = {
     "winch": ["tungsten", "rubber"],
 
     "condense": ["plastic", "glass", "iron"],
+    "crane": ["steel", "silicone", "titanium"],
     "lab": ["tungsten", "glass", "ceramic"],
     "largeprint": ["compound", 3],
     "largeseat": ["compound", ["plastic", 2]],

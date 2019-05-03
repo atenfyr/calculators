@@ -8,6 +8,7 @@ var amperage = {
     "research": 2,
     "medshred": 1.5,
     "largeshred": 3,
+    "hugeshred": 3,
     "tinyprint": 0.625,
     "smallprint": 1,
     "medprint": 2,
