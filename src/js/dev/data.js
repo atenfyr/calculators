@@ -93,7 +93,18 @@ var entryIndex = {
     "splitter": ["copper", "graphite"],
     "winch": ["tungsten", "rubber"],
 
-    "cones": 0.02,
+    "condense": ["plastic", "glass", "iron"],
+    "lab": ["tungsten", "glass", "ceramic"],
+    "largeprint": ["compound", 3],
+    "largeseat": ["compound", ["plastic", 2]],
+    "largeshred": ["tungstenCarbide", ["iron", 2]],
+    "largestorage": ["ceramic", 3],
+    "research": ["resin", ["compound", 2]],
+    "furnace": [["resin", 2], "compound"],
+    "centri": ["aluminum", ["compound", 2]],
+    "tradeplatform": ["iron", "tungsten", "compound"],
+
+    "cones": 0.02
 };
 
 function parseData(key) {
