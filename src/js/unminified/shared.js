@@ -1,11 +1,12 @@
 "use strict";
 
 var exponentialRegex = /([.\d]+)e\+(\d+)/;
-function overflowCheck(val) {
+function overflowCheck(val, forceReturnVal) {
     if (val >= 1e100) return "∞";
     if (val > 1e18) return val.toExponential().replace(exponentialRegex, function(match, p1, p2) {
         return parseFloat(p1).toFixed(2) + " × 10<sup>" + p2 + "</sup>";
     });
+    if (forceReturnVal) return val;
     return null;
 }
 
@@ -34,12 +35,18 @@ function parseValueTruncate(num, factor) {
 
 function parseValueSeconds(num, factor) {
     var time = num/factor;
-    var mins = Math.floor(time%60);
     var secs = Math.floor((time*60)%60);
+    var mins = Math.floor(time%60);
     var hours = Math.floor((time/60)%24);
-    var days = Math.floor(time/1440);
+    var days = Math.floor((time/1440)%30);
+    var months = Math.floor((time/43200)%12);
+    var years = Math.floor(time/518400);
 
+    if (years >= 1e100) return "∞ years";
+    
     var str = "";
+    if (years > 0) str += overflowCheck(years, true) + " years ";
+    if (months > 0) str += months + " months ";
     if (days > 0) str += days + " days ";
     if (hours > 0) str += hours + " hours ";
     if (mins > 0) str += mins + " minutes ";
