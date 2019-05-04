@@ -96,6 +96,7 @@ var entryIndex = {
     "condense": ["plastic", "glass", "iron"],
     "crane": ["steel", "silicone", "titanium"],
     "lab": ["tungsten", "glass", "ceramic"],
+    "landingpad": ["aluminum", ["ceramic", 2]],
     "largeprint": ["compound", 3],
     "largeseat": ["compound", ["plastic", 2]],
     "largeshred": ["tungstenCarbide", ["iron", 2]],
