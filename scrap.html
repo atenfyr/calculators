@@ -24,6 +24,7 @@
             <img class="menu-icon" src="assets/hamburger.png" onclick="expand()">
             <img class="flight-icon" src="assets/flight.png" onclick="eft()">
         </div>
+        <noscript><span id="noscript">Please enable JavaScript to use this calculator.</span></noscript>
         <div id="content">
             <span class="header">
                 <a href="./"><img class="big" src="assets/exo.png"><h1 id="header_text">EXO Dynamics Scrap Calculator</h1></a>
@@ -204,7 +205,7 @@
                     </div>
                 </section>
                 <section class="eft">
-                    <h2 title="Large items can only be shredded in the Exo Flight Test (EFT) as of 2019-5-3. This notice will be removed upon release of Patch 1.1.0.">Large Items</h2>
+                    <h2>Large Items</h2>
                     <div>
                         <img class="small" src="assets/input/condense.png"><label for="condense">Atmospheric Condenser</label>
                         <input type="number" placeholder="0" min="0" id="condense" onchange="calc()">
