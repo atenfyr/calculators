@@ -106,6 +106,25 @@ h2 {
     flex: 1 0 26%;
 }
 
+/* Exo Flight Test */
+.inputs .eft, .outputs .eft, .eft {
+    display: none;
+}
+
+.inputs .not_eft, .outputs .not_eft, .not_eft {
+    display: initial;
+}
+
+.flight-icon {
+    display: block;
+    float: right;
+    height: 20px;
+    width: 20px;
+    position: relative;
+    top: 50%;
+    transform: translateY(75%);
+}
+
 img {
     vertical-align: middle;
     margin-right: 10px;

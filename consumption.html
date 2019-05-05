@@ -21,10 +21,11 @@
             <a href="storage.html">Power Storage</a>
             <a href="scrap.html">Scrap</a>
             <img class="menu-icon" src="assets/hamburger.png" onclick="expand()">
+            <img class="flight-icon" src="assets/flight.png" onclick="eft()">
         </div>
         <div id="content">
             <span class="header">
-                <a href="./"><img class="big" src="assets/exo.png"><h1>EXO Dynamics Power Consumption Calculator</h1></a>
+                <a href="./"><img class="big" src="assets/exo.png"><h1 id="header_text">EXO Dynamics Power Consumption Calculator</h1></a>
             </span>
             <div class="inputs">
                 <section>
@@ -61,7 +62,7 @@
                         <img class="small" src="assets/input/shredder.png"><label for="largeshred">Large Shredder</label>
                         <input type="number" placeholder="0" min="0" id="largeshred" onchange="calcConsumption()">
                     </div>
-                    <div>
+                    <div class="eft">
                         <img class="small" src="assets/input/shredder.png"><label title="Only available in the Exo Flight Test (EFT) as of 2019-5-3. This notice will be removed upon release of Patch 1.1.0." for="hugeshred">Extra Large Shredder</label>
                         <input type="number" placeholder="0" min="0" id="hugeshred" onchange="calcConsumption()">
                     </div>
