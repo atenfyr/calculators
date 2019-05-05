@@ -32,7 +32,3 @@ function eft() {
         elems[i].style.display = newDisplayNOT;
     }
 }
-
-window.addEventListener("load", function() {
-    document.getElementById("content").style.display = "";
-});
