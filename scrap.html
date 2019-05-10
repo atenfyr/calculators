@@ -22,7 +22,6 @@
             <a href="storage.html">Power Storage</a>
             <a class="active">Scrap</a>
             <img class="menu-icon" src="assets/hamburger.png" onclick="expand()">
-            <img class="flight-icon" src="assets/flight.png" onclick="eft()">
         </div>
         <noscript><span id="noscript">Please enable JavaScript to use this calculator.<br><br></span></noscript>
         <div id="content">
@@ -204,7 +203,7 @@
                         <input type="number" placeholder="0" min="0" id="winch" onchange="calc()">
                     </div>
                 </section>
-                <section class="eft">
+                <section>
                     <h2>Large Items</h2>
                     <div>
                         <img class="small" src="assets/input/condense.png"><label for="condense">Atmospheric Condenser</label>
@@ -400,9 +399,6 @@
                         <input type="number" placeholder="0" min="0" id="tungstenCarbide" step="any" onchange="calc()">
                     </div>
                 </section>
-
-                <!-- if the PTR is not enabled, we need this to not mess things up -->
-                <section class="placeholder not_eft"></section>
             </div>
             <hr>
             <div class="outputs">

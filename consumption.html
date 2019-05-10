@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="src/css/style.min.css">
         <link rel="stylesheet" href="src/css/consumption.min.css">
         <script src="src/js/shared.min.js"></script>
-        <script src="src/js/consumptionproduction.min.js"></script>
+        <script src="src/js/power.min.js"></script>
         <script src="src/js/responsive.min.js"></script>
     </head>
     <body onload="calcConsumption()">
@@ -21,7 +21,6 @@
             <a href="storage.html">Power Storage</a>
             <a href="scrap.html">Scrap</a>
             <img class="menu-icon" src="assets/hamburger.png" onclick="expand()">
-            <img class="flight-icon" src="assets/flight.png" onclick="eft()">
         </div>
         <noscript><span id="noscript">Please enable JavaScript to use this calculator.<br><br></span></noscript>
         <div id="content">
@@ -30,7 +29,19 @@
             </span>
             <div class="inputs">
                 <section>
-                    <h2>Production</h2> 
+                    <h2>Production</h2>
+                    <div>
+                        <img class="small" src="assets/input/condense.png"><label for="condense">Atmospheric Condenser</label>
+                        <input type="number" placeholder="0" min="0" id="condense" onchange="calcConsumption()">
+                    </div>
+                    <div>
+                        <img class="small" src="assets/input/lab.png"><label for="lab">Chemistry Lab</label>
+                        <input type="number" placeholder="0" min="0" id="lab" onchange="calcConsumption()">
+                    </div>
+                    <div>
+                        <img class="small" src="assets/input/research.png"><label for="research">Research Chamber</label>
+                        <input type="number" placeholder="0" min="0" id="research" onchange="calcConsumption()">
+                    </div>
                     <div>
                         <img class="small" src="assets/input/furnace.png"><label for="furnace">Smelting Furnace</label>
                         <input type="number" placeholder="0" min="0" id="furnace" onchange="calcConsumption()">
@@ -38,18 +49,6 @@
                     <div>
                         <img class="small" src="assets/input/centri.png"><label for="centri">Soil Centrifuge</label>
                         <input type="number" placeholder="0" min="0" id="centri" onchange="calcConsumption()">
-                    </div>
-                    <div>
-                        <img class="small" src="assets/input/lab.png"><label for="lab">Chemistry Lab</label>
-                        <input type="number" placeholder="0" min="0" id="lab" onchange="calcConsumption()">
-                    </div>
-                    <div>
-                        <img class="small" src="assets/input/condense.png"><label for="condense">Atmospheric Condenser</label>
-                        <input type="number" placeholder="0" min="0" id="condense" onchange="calcConsumption()">
-                    </div>
-                    <div>
-                        <img class="small" src="assets/input/research.png"><label for="research">Research Chamber</label>
-                        <input type="number" placeholder="0" min="0" id="research" onchange="calcConsumption()">
                     </div>
                 </section>
 
@@ -63,7 +62,7 @@
                         <img class="small" src="assets/input/shredder.png"><label for="largeshred">Large Shredder</label>
                         <input type="number" placeholder="0" min="0" id="largeshred" onchange="calcConsumption()">
                     </div>
-                    <div class="eft">
+                    <div>
                         <img class="small" src="assets/input/shredder.png"><label for="hugeshred">Extra Large Shredder</label>
                         <input type="number" placeholder="0" min="0" id="hugeshred" onchange="calcConsumption()">
                     </div>
@@ -92,20 +91,20 @@
                 <section>
                     <h2>Vehicles</h2>
                     <div>
-                        <img class="small" src="assets/input/rover.png"><label for="medrover">Medium Rover</label>
-                        <input type="number" placeholder="0" min="0" id="medrover" onchange="calcConsumption()">
-                    </div>
-                    <div>
-                        <img class="small" src="assets/input/rover.png"><label for="largerover">Large Rover</label>
-                        <input type="number" placeholder="0" min="0" id="largerover" onchange="calcConsumption()">
+                        <img class="small" src="assets/input/rover.png"><label for="buggy">Buggy</label>
+                        <input type="number" placeholder="0" min="0" id="buggy" onchange="calcConsumption()">
                     </div>
                     <div>
                         <img class="small" src="assets/input/tractor.png"><label for="tractor">Tractor</label>
                         <input type="number" placeholder="0" min="0" id="tractor" onchange="calcConsumption()">
                     </div>
                     <div>
-                        <img class="small" src="assets/input/rover.png"><label for="buggy">Buggy</label>
-                        <input type="number" placeholder="0" min="0" id="buggy" onchange="calcConsumption()">
+                        <img class="small" src="assets/input/rover.png"><label for="medrover">Medium Rover</label>
+                        <input type="number" placeholder="0" min="0" id="medrover" onchange="calcConsumption()">
+                    </div>
+                    <div>
+                        <img class="small" src="assets/input/rover.png"><label for="largerover">Large Rover</label>
+                        <input type="number" placeholder="0" min="0" id="largerover" onchange="calcConsumption()">
                     </div>
                     <div>
                         <img class="small" src="assets/input/drill.png"><label for="drill" title="The drill mods consume more power the higher tier they are, whereas the drills all consume 1 U/s.">Drills</label>

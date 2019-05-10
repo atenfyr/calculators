@@ -1,5 +1,6 @@
 "use strict";
 
+// <img class="flight-icon" src="assets/flight.png" onclick="eft()">
 var isEFT = false;
 var HEADER_DATA = " (<abbr title=\"EFT, or &quot;Exo Flight Test,&quot; is Astroneer's system for opt-in open betas for the next content update. With this option enabled, this calculator will show content exclusive to the Exo Flight Test and not present in the latest stable release.\">EFT</abbr>)";
 
