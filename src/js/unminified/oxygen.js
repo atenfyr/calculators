@@ -10,14 +10,14 @@ var storage = {
     "sprint": 6/5
 };
 
-function updateFields(total) {
+function updateFields(total, filterCount) {
     var elems = document.getElementsByClassName("output");
     for (var i = 0; i < elems.length; i++) {
         var elem = elems[i];
         if (elem.id === "total") {
             elem.innerHTML = truncateValue(total);
         } else if (elem.className.indexOf("time") > -1) {
-            elem.innerHTML = parseValueSeconds(total, storage[elem.id]);
+            elem.innerHTML = parseValueSeconds((total/storage[elem.id])+((4/3)*filterCount), 1);
         } else if (elem.className.indexOf("truncate") > -1) {
             elem.innerHTML = parseValueTruncate(total, storage[elem.id]);
         } else {
@@ -39,5 +39,5 @@ function calc() {
         }
     }
 
-    updateFields(total);
+    updateFields(total, parseFloat(document.getElementById("filters").value) || 0);
 }
