@@ -3,7 +3,7 @@ const fs = require("fs");
 /// Scrap data ///
 var resourceIndex = {
     "aluminum": 1,
-    "aluminumAlloy": 1.5, // estimate
+    "aluminumAlloy": 1.5,
     "ammonium": 0.5,
     "carbon": 0.5, // estimate
     "ceramic": 0.5,
@@ -26,17 +26,19 @@ var resourceIndex = {
     "quartz": 0.25,
     "resin": 0.25,
     "rubber": 1,
-    "silicone": 1.5,
+    "silicone": 1, // estimate
     "sphalerite": 0.25,
-    "steel": 2,
-    "titanite": 0.5,
-    "titanium": 1,
+    "steel": 1.5, // estimate
+    "titanite": 1,
+    "titanium": 2,
     "titaniumAlloy": 1.5,
     "tungsten": 1.5,
     "tungstenCarbide": 1.5,
     "wolframite": 0.75,
     "zinc": 0.5,
 };
+
+// <img class="flight-icon" src="assets/flight.png" onclick="eft()">
 
 /*
     The goal of this program is to simplify the values in the data table given below into numbers that are given to the client.
@@ -74,6 +76,7 @@ var entryIndex = {
     "terrainanalyzer": "zinc",
     "widemod": "zinc",
     "worklight": "copper",
+    "floodlight": "tungsten",
 
     "drill1": ["ceramic", "tungstenCarbide"],
     "drill2": ["titaniumAlloy", "tungstenCarbide"],
@@ -92,6 +95,8 @@ var entryIndex = {
     "solidfuelthruster": ["ammonium", "aluminum"],
     "splitter": ["copper", "graphite"],
     "winch": ["tungsten", "rubber"],
+    "tallstorage": ["ceramic"],
+    "mediumsilo": ["titanium", 2],
 
     "condense": ["plastic", "glass", "iron"],
     "crane": ["steel", "silicone", "titanium"],
@@ -105,6 +110,7 @@ var entryIndex = {
     "furnace": [["resin", 2], "compound"],
     "centri": ["aluminum", ["compound", 2]],
     "tradeplatform": ["iron", "tungsten", "compound"],
+    "sphere": ["aluminumAlloy", "rubber"],
 
     "cones": 0.02
 };

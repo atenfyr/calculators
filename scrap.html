@@ -22,6 +22,7 @@
             <a href="storage.html">Power Storage</a>
             <a class="active">Scrap</a>
             <img class="menu-icon" src="assets/hamburger.png" onclick="expand()">
+            <img class="flight-icon" src="assets/flight.png" onclick="eft()">
         </div>
         <noscript><span id="noscript">Please enable JavaScript to use this calculator.<br><br></span></noscript>
         <div id="content">
@@ -46,6 +47,10 @@
                     <div>
                         <img class="small" src="assets/scrapped/extenders.png"><label title="This is the individual number of extenders, not the number of stacks of extenders. For your reference, a full stack of extenders has 5 extenders." for="extenders">Extenders</label>
                         <input type="number" placeholder="0" min="0" id="extenders" onchange="calc()">
+                    </div>
+                    <div class="eft">
+                        <img class="small" src="assets/scrapped/worklight.png"><label for="floodlight">Floodlight</label>
+                        <input type="number" placeholder="0" min="0" id="floodlight" onchange="calc()">
                     </div>
                     <div>
                         <img class="small" src="assets/misc/tank.png"><label title="This is the amount of full stacks of oxygen filters. You can use decimals here if you want." for="filters">Oxygen Filters</label>
@@ -174,6 +179,10 @@
                         <img class="small" src="assets/scrapped/mediumstorage.png"><label for="mediumstorage">Medium Storage</label>
                         <input type="number" placeholder="0" min="0" id="mediumstorage" onchange="calc()">
                     </div>
+                    <div class="eft">
+                        <img class="small" src="assets/scrapped/mediumstorage.png"><label for="mediumsilo">Medium Storage Silo</label>
+                        <input type="number" placeholder="0" min="0" id="mediumsilo" onchange="calc()">
+                    </div>
                     <div>
                         <img class="small" src="assets/output/wind.png"><label for="mediumwind">Medium Wind</label>
                         <input type="number" placeholder="0" min="0" id="mediumwind" onchange="calc()">
@@ -197,6 +206,10 @@
                     <div>
                         <img class="small" src="assets/scrapped/splitter.png"><label for="splitter">Splitter</label>
                         <input type="number" placeholder="0" min="0" id="splitter" onchange="calc()">
+                    </div>
+                    <div class="eft">
+                        <img class="small" src="assets/scrapped/mediumstorage.png"><label for="tallstorage">Tall Storage</label>
+                        <input type="number" placeholder="0" min="0" id="tallstorage" onchange="calc()">
                     </div>
                     <div>
                         <img class="small" src="assets/scrapped/winch.png"><label for="winch">Winch</label>
@@ -236,6 +249,10 @@
                     <div>
                         <img class="small" src="assets/scrapped/mediumstorage.png"><label for="largestorage">Large Storage</label>
                         <input type="number" placeholder="0" min="0" id="largestorage" onchange="calc()">
+                    </div>
+                    <div class="eft">
+                        <img class="small" src="assets/scrapped/sphere.png"><label for="sphere">Recreational Sphere</label>
+                        <input type="number" placeholder="0" min="0" id="sphere" onchange="calc()">
                     </div>
                     <div>
                         <img class="small" src="assets/input/research.png"><label for="research">Research Chamber</label>
@@ -355,7 +372,7 @@
                 <section>
                     <h2>Composite Resources</h2>
                     <div>
-                        <img class="small" src="assets/resources/aluminumAlloy.png"><label title="Estimated." for="aluminumAlloy">Aluminum Alloy</label>
+                        <img class="small" src="assets/resources/aluminumAlloy.png"><label for="aluminumAlloy">Aluminum Alloy</label>
                         <input type="number" placeholder="0" min="0" id="aluminumAlloy" step="any" onchange="calc()">
                     </div>
                     <div>
@@ -383,11 +400,11 @@
                         <input type="number" placeholder="0" min="0" id="rubber" step="any" onchange="calc()">
                     </div>
                     <div>
-                        <img class="small" src="assets/resources/silicone.png"><label for="silicone">Silicone</label>
+                        <img class="small" src="assets/resources/silicone.png"><label title="Estimated." for="silicone">Silicone</label>
                         <input type="number" placeholder="0" min="0" id="silicone" step="any" onchange="calc()">
                     </div>
                     <div>
-                        <img class="small" src="assets/resources/steel.png"><label for="steel">Steel</label>
+                        <img class="small" src="assets/resources/steel.png"><label title="Estimated." for="steel">Steel</label>
                         <input type="number" placeholder="0" min="0" id="steel" step="any" onchange="calc()">
                     </div>
                     <div>
