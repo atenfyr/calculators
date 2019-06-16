@@ -2,7 +2,7 @@
 
 // <img class="flight-icon" src="assets/flight.png" onclick="eft()">
 var isEFT = false;
-var HEADER_DATA = " (<abbr title=\"EFT, or &quot;EXO Flight Test,&quot; is Astroneer's system for opt-in open betas for the next content update. With this option enabled, this calculator will show content exclusive to the EXO Flight Test and not present in the latest stable release.\">EFT</abbr>)";
+var HEADER_DATA = " (<abbr title=\"EFT, or &quot;EXO Flight Test,&quot; is Astroneer's system for opt-in open betas for the next content update. With this option enabled, this calculator will show content exclusive to the EXO Flight Test and not present in the latest stable release. All EFT-exclusive entries are marked by a red icon.\">EFT</abbr>)";
 
 function expand() {
     var navBar = document.getElementById("navbar");
@@ -32,4 +32,5 @@ function eft() {
     for (var i = 0; i < elems.length; i++) {
         elems[i].style.display = newDisplayNOT;
     }
+    calc();
 }

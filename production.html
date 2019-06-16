@@ -13,7 +13,7 @@
         <script src="src/js/power.min.js"></script>
         <script src="src/js/responsive.min.js"></script>
     </head>
-    <body onload="calcProduction()">
+    <body id="productionBody" onload="calc()">
         <div id="navbar" class="closed">
             <a href="./">Home</a>
             <a href="consumption.html">Power Consumption</a>
@@ -32,11 +32,11 @@
                     <h2>Generators</h2> 
                     <div>
                         <img class="small" src="assets/output/rtg.png"><label for="smallgen">Small Generator</label>
-                        <input type="number" placeholder="0" min="0" id="smallgen" onchange="calcProduction()">
+                        <input type="number" placeholder="0" min="0" id="smallgen" onchange="calc()">
                     </div>
                     <div>
                         <img class="small" src="assets/output/rtg.png"><label for="medgen">Medium Generator</label>
-                        <input type="number" placeholder="0" min="0" id="medgen" onchange="calcProduction()">
+                        <input type="number" placeholder="0" min="0" id="medgen" onchange="calc()">
                     </div>
                 </section>
 
@@ -44,15 +44,15 @@
                     <h2>Solar</h2>
                     <div>
                         <img class="small" src="assets/output/solar.png"><label for="smallsolar">Small Solar</label>
-                        <input type="number" placeholder="0" min="0" id="smallsolar" onchange="calcProduction()">
+                        <input type="number" placeholder="0" min="0" id="smallsolar" onchange="calc()">
                     </div>
                     <div>
                         <img class="small" src="assets/output/solar.png"><label for="medsolar">Medium Solar</label>
-                        <input type="number" placeholder="0" min="0" id="medsolar" onchange="calcProduction()">
+                        <input type="number" placeholder="0" min="0" id="medsolar" onchange="calc()">
                     </div>
                     <div>
                         <img class="small" src="assets/output/solar.png"><label for="array">Solar Array</label>
-                        <input type="number" placeholder="0" min="0" id="array" onchange="calcProduction()">
+                        <input type="number" placeholder="0" min="0" id="array" onchange="calc()">
                     </div>
                 </section>
 
@@ -60,11 +60,11 @@
                     <h2>Wind</h2>
                     <div>
                         <img class="small" src="assets/output/wind.png"><label for="smallwind">Small Wind Turbine</label>
-                        <input type="number" placeholder="0" min="0" id="smallwind" onchange="calcProduction()">
+                        <input type="number" placeholder="0" min="0" id="smallwind" onchange="calc()">
                     </div>
                     <div>
                         <img class="small" src="assets/output/wind.png"><label for="medwind">Medium Wind Turbine</label>
-                        <input type="number" placeholder="0" min="0" id="medwind" onchange="calcProduction()">
+                        <input type="number" placeholder="0" min="0" id="medwind" onchange="calc()">
                     </div>
                 </section>
 
@@ -72,19 +72,19 @@
                     <h2>Miscellaneous</h2>
                     <div>
                         <img class="small" src="assets/output/rtg.png"><label for="rtgs">RTG</label>
-                        <input type="number" placeholder="0" min="0" id="rtgs" onchange="calcProduction()">
+                        <input type="number" placeholder="0" min="0" id="rtgs" onchange="calc()">
                     </div>
                     <div>
                         <img class="small" src="assets/output/shelter.png"><label for="shelter">Shelter</label>
-                        <input type="number" placeholder="0" min="0" id="shelter" onchange="calcProduction()">
+                        <input type="number" placeholder="0" min="0" id="shelter" onchange="calc()">
                     </div>
                     <div>
                         <img class="small" src="assets/output/battery.png"><label for="smallbatt">Small Battery</label>
-                        <input type="number" placeholder="0" min="0" id="smallbatt" onchange="calcProduction()">
+                        <input type="number" placeholder="0" min="0" id="smallbatt" onchange="calc()">
                     </div>
                     <div>
                         <img class="small" src="assets/output/battery.png"><label for="medbatt">Medium Battery</label>
-                        <input type="number" placeholder="0" min="0" id="medbatt" onchange="calcProduction()">
+                        <input type="number" placeholder="0" min="0" id="medbatt" onchange="calc()">
                     </div>
                 </section>
 

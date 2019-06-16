@@ -95,8 +95,10 @@ function calcConsumption() {
 
     for (var i in amperage) {
         if (amperage.hasOwnProperty(i)) {
-            var quantity = parseInt(document.getElementById(i).value) || 0;
-            if (quantity > 0) { // optimization specific only to this function so that we're not calling log every single time unless we need to
+            var elem = document.getElementById(i);
+            var quantity = parseInt(elem.value) || 0;
+            if (quantity > 0 && !isElemInvisible(elem)) { // optimization specific only to this function so that we're not calling log every single time unless we need to
+                var elem = document.getElementById(i);   
                 if (i.indexOf("shred") > -1) {
                     total += shredderSpeed(speed, amperage[i])*quantity;
                 } else {
@@ -122,4 +124,12 @@ function calcProduction() {
     }
 
     updateFields(total);
+}
+
+function calc() {
+    if (document.getElementById("productionBody")) {
+        return calcProduction();
+    } else {
+        return calcConsumption();
+    }
 }

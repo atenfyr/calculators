@@ -54,3 +54,7 @@ function parseValueSeconds(num, factor) {
     if (str === "") return "0 seconds";
     return str.slice(0, -1);
 }
+
+function isElemInvisible(elem) {
+    return !(elem.offsetWidth || elem.offsetHeight || elem.getClientRects().length);
+}

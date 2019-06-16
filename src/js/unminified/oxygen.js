@@ -31,7 +31,9 @@ function calc() {
     for (var i in storage) {
         if (storage.hasOwnProperty(i)) {
             var elem = document.getElementById(i);
-            if (elem.step === "any") {
+            if (isElemInvisible(elem)) {
+                total += 0;
+            } else if (elem.step === "any") {
                 total += storage[i]*(parseFloat(elem.value) || 0);
             } else {
                 total += storage[i]*(parseInt(elem.value) || 0);

@@ -21,7 +21,9 @@ function calc() {
     for (var i in entryIndex) {
         if (entryIndex.hasOwnProperty(i)) {
             var elem = document.getElementById(i);
-            if (elem.step === "any") {
+            if (isElemInvisible(elem)) {
+                total += 0;
+            } else if (elem.step === "any") {
                 total += entryIndex[i]*(parseFloat(elem.value) || 0);
             } else {
                 var num = parseInt(elem.value) || 0;
@@ -30,9 +32,12 @@ function calc() {
             }
         }
     }
+
     for (var i in resourceIndex) {
         if (resourceIndex.hasOwnProperty(i)) {
-            var num = parseFloat(document.getElementById(i).value) || 0;
+            var elem = document.getElementById(i);
+            var num = parseFloat(elem.value) || 0;
+            if (isElemInvisible(elem)) num = 0;
             if (i === "explosivePowder") explosions += num;
             total += resourceIndex[i]*num;
         }

@@ -38,8 +38,6 @@ var resourceIndex = {
     "zinc": 0.5,
 };
 
-// <img class="flight-icon" src="assets/flight.png" onclick="eft()">
-
 /*
     The goal of this program is to simplify the values in the data table given below into numbers that are given to the client.
     --Entry Syntax Guide--
