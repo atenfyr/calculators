@@ -5,7 +5,7 @@ var resourceIndex = {
     "aluminum": 1,
     "aluminumAlloy": 1.5,
     "ammonium": 0.5,
-    "carbon": 0.5, // estimate
+    "carbon": 0.5,
     "ceramic": 0.5,
     "clay": 0.25,
     "compound": 0.25,
@@ -21,7 +21,7 @@ var resourceIndex = {
     "lithium": 2,
     "malachite": 0.5,
     "nanocarbonAlloy": 2,
-    "organic": 0.25, // estimate
+    "organic": 0.25,
     "plastic": 0.5,
     "quartz": 0.25,
     "resin": 0.25,
