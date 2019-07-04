@@ -63,7 +63,7 @@ var entryIndex = {
     "smallprinter": "compound",
     "smallsolar": "copper",
     "smallwind": "glass",
-    "tethers": ["compound", 11],
+    "tethers": ["compound", 1 / 11],
     "alignmentmod": "zinc",
     "boostmod": "zinc",
     "mod1": "ceramic",
@@ -93,7 +93,7 @@ var entryIndex = {
     "solidfuelthruster": ["ammonium", "aluminum"],
     "splitter": ["copper", "graphite"],
     "winch": ["tungsten", "rubber"],
-    "tallstorage": ["ceramic"],
+    "tallstorage": "ceramic",
     "mediumsilo": ["titanium", 2],
 
     "condense": ["plastic", "glass", "iron"],
