@@ -1,13 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Exo+2:400&display=swap');
 html {
     background-color: #444;
     color: #e6e6e6;
     font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Exo 2', Arial, Helvetica, sans-serif;
 }
 
 body {
     margin: 0;
     padding: 0;
+    margin-bottom: 10px;
 }
 
 #content {
@@ -152,6 +154,13 @@ img {
 .big {
     max-width: 25%;
     max-height: 40px;
+}
+
+.massive {
+    max-width: -moz-calc(100% - 10px);
+    max-width: -webkit-calc(100% - 10px);
+    max-width: -o-calc(100% - 10px);
+    max-width: calc(100% - 10px);
 }
 
 input {

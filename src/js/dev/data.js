@@ -84,7 +84,7 @@ var entryIndex = {
     "mediumgenerator": ["aluminum", "tungsten"],
     "mediumprinter": ["compound", 2],
     "mediumshredder": ["iron", 2],
-    "mediumsolar": ["copper","glass"],
+    "mediumsolar": ["copper", "glass"],
     "mediumstorage": ["resin", 2],
     "mediumwind": ["ceramic", "glass"],
     "oxygenator": ["ceramic", "aluminum"],
@@ -98,7 +98,7 @@ var entryIndex = {
 
     "condense": ["plastic", "glass", "iron"],
     "crane": ["steel", "silicone", "titanium"],
-    "lab": ["tungsten", "glass", "ceramic"],
+    "lab": ["ceramic", "tungsten", "glass"],
     "landingpad": ["aluminum", ["ceramic", 2]],
     "largeprint": ["compound", 3],
     "largeseat": ["compound", ["plastic", 2]],
@@ -106,7 +106,7 @@ var entryIndex = {
     "largestorage": ["ceramic", 3],
     "research": ["resin", ["compound", 2]],
     "furnace": [["resin", 2], "compound"],
-    "centri": ["aluminum", ["compound", 2]],
+    "centri": [["compound", 2], "aluminum"],
     "tradeplatform": ["iron", "tungsten", "compound"],
     "sphere": ["aluminumAlloy", "rubber"],
 
