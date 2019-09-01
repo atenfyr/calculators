@@ -4,7 +4,7 @@ var exponentialRegex = /([.\d]+)e\+(\d+)/;
 function overflowCheck(val, forceReturnVal) {
     if (val >= 1e100) return "∞";
     if (val > 1e18) return val.toExponential().replace(exponentialRegex, function(match, p1, p2) {
-        return parseFloat(p1).toFixed(2) + " × 10<sup>" + p2 + "</sup>";
+        return parseFloat(p1).toFixed(2) + " x 10<sup>" + p2 + "</sup>";
     });
     if (forceReturnVal) return val;
     return null;

@@ -104,6 +104,8 @@ var entryIndex = {
     "largeseat": ["compound", ["plastic", 2]],
     "largeshred": ["tungstenCarbide", ["iron", 2]],
     "largestorage": ["ceramic", 3],
+    /*"largestoragesiloA": ["aluminumAlloy", 3],
+    "largestoragesiloB": ["steel", 3],*/
     "research": ["resin", ["compound", 2]],
     "furnace": [["resin", 2], "compound"],
     "centri": [["compound", 2], "aluminum"],
