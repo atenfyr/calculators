@@ -26,9 +26,9 @@ var resourceIndex = {
     "quartz": 0.25,
     "resin": 0.25,
     "rubber": 1,
-    "silicone": 1, // estimate
+    "silicone": 1,
     "sphalerite": 0.25,
-    "steel": 1.5, // estimate
+    "steel": 1.5,
     "titanite": 1,
     "titanium": 2,
     "titaniumAlloy": 1.5,
@@ -44,7 +44,7 @@ var resourceIndex = {
         If an entry is a number, it is already simplified and does not need to be processed further.
         If an entry is a string, the value of the entry is the value of the resource designated by the string.
         If an entry is an array with the first element being a string and the second element being a number, the value of the entry is the value of the resource designated by the string times the number.
-        If an entry is an array that does not meet any other criteria, all of the array's elements go through the same process as a regular entry, with the value of the entry being equal to the sum of all its elements.
+        If an entry is an array that does not meet any of the above criteria, all of the array's elements go through the same process as a regular entry, with the value of the entire entry being equal to the sum of all its elements.
         If an entry does not meet any of the above criteria, the entry is invalid.
 */
 
@@ -75,11 +75,15 @@ var entryIndex = {
     "widemod": "zinc",
     "worklight": "copper",
     "floodlight": "tungsten",
+    "glowsticks": "organic",
+    "hydrazinejetpack": "titaniumAlloy",
+    "solidfueljetpack": "aluminumAlloy",
+    "smallcamera": "steel",
 
     "drill1": ["ceramic", "tungstenCarbide"],
     "drill2": ["titaniumAlloy", "tungstenCarbide"],
     "drill3": ["titaniumAlloy", "diamond"],
-    "hydrazinethruster": ["titaniumAlloy", "tungsten"],
+    "hydrazinethruster": ["tungsten", "steel"],
     "mediumbattery": ["lithium", "zinc"],
     "mediumgenerator": ["aluminum", "tungsten"],
     "mediumprinter": ["compound", 2],
@@ -104,8 +108,9 @@ var entryIndex = {
     "largeseat": ["compound", ["plastic", 2]],
     "largeshred": ["tungstenCarbide", ["iron", 2]],
     "largestorage": ["ceramic", 3],
-    /*"largestoragesiloA": ["aluminumAlloy", 3],
-    "largestoragesiloB": ["steel", 3],*/
+    "largestoragering": ["aluminumAlloy", ["ceramic", 2]],
+    "largestoragesiloA": ["aluminumAlloy", 3],
+    "largestoragesiloB": ["steel", 3],
     "research": ["resin", ["compound", 2]],
     "furnace": [["resin", 2], "compound"],
     "centri": [["compound", 2], "aluminum"],

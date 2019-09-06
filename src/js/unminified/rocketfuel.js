@@ -3,9 +3,11 @@
 var storage = {
     "solidfuel": 4,
     "fullthruster": 24,
+    "jumpjet": 360/71,
     "hydrazine": 8,
     "ammonium": 4,
-    "flight": 720/19
+    "flightjetpack": 240/71, // 17.75 seconds per fuel unit
+    "flight": 720/19 // 1.58 seconds per fuel unit
 };
 
 function updateFields(total) {

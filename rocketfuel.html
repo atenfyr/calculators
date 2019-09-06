@@ -39,6 +39,10 @@
                         <img class="small" src="assets/misc/thruster.png"><label for="fullthruster">Hydrazine Thruster (full)</label>
                         <input type="number" placeholder="0" min="0" id="fullthruster" step="any" onchange="calc()">
                     </div>
+                    <div>
+                        <img class="small" src="assets/misc/thruster.png"><label title="This is an approximation, so these numbers are likely not even close to exact. The jumpjet gets about 20 jumps per bar, so 60 jumps in total, each lasting 1.5 seconds." for="jumpjet">Solid-Fuel Jump Jet</label>
+                        <input type="number" placeholder="0" min="0" id="jumpjet" step="any" onchange="calc()">
+                    </div>
                 </section>
 
                 <section>
@@ -58,7 +62,7 @@
                 <section>
                     <div class="aligned">
                         <img class="big" src="assets/resources/hydrazine.png">
-                        <span class="output" id="total">0.00</span><span> <abbr title="Fuel units (or &quot;charges&quot;) are a measure of rocket fuel storage. One fuel unit is expended once a rocket has left the surface of a planet or switched between planets, but no fuel is required to land. One fuel unit will also keep a thruster that is not on a shuttle running for about 1.67 seconds.">fuel units</abbr></span>
+                        <span class="output" id="total">0.00</span><span> <abbr title="Fuel units (or &quot;charges&quot;) are a measure of rocket fuel storage. One fuel unit is expended once a rocket has left the surface of a planet or switched between planets, but no fuel is required to land.">fuel units</abbr></span>
                     </div>
                     <div class="aligned">
                         <img class="big" src="assets/misc/thruster.png">
@@ -68,7 +72,11 @@
                 <section>
                     <div class="aligned">
                         <img class="big" src="assets/misc/time.png">
-                        <span class="output time" id="flight">0.00</span><span> of <abbr title="This value only applies when an active thruster is not on a shuttle.">flight</abbr></span>
+                        <span class="output time" id="flightjetpack">0.00</span><span> of jetpack flight</span>
+                    </div>
+                    <div class="aligned">
+                        <img class="big" src="assets/misc/time.png">
+                        <span class="output time" id="flight">0.00</span><span> of <abbr title="This value only applies when an active thruster is not on a shuttle.">thruster flight</abbr></span>
                     </div>
                 </section>
                 <section>
