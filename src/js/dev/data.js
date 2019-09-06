@@ -75,7 +75,7 @@ var entryIndex = {
     "widemod": "zinc",
     "worklight": "copper",
     "floodlight": "tungsten",
-    "glowsticks": "organic",
+    "glowsticks": ["organic", 1 / 25],
     "hydrazinejetpack": "titaniumAlloy",
     "solidfueljetpack": "aluminumAlloy",
     "smallcamera": "steel",
