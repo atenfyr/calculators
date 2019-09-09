@@ -61,7 +61,8 @@ var power = {
     "medwind": 1,
     "shelter": 1,
     "smallbatt": 1,
-    "medbatt": 3
+    "medbatt": 3,
+    "powercells": 1,
 };
 
 // very much experimental and usually not accurate
