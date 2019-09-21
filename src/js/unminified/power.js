@@ -65,14 +65,19 @@ var power = {
     "powercells": 1,
 };
 
-// very much experimental and usually not accurate
+/*
+this formula is derived from the following linear equation:
+    x: U/s
+    y: time taken to make 1 scrap in seconds
+    equation: y = -11.5x + 59.5
+*/
 function shredderSpeed(speed, cap) {
     if (speed >= 1) return cap;
     if (speed <= 0) return 0;
 
-    var calculatedAmperage = ((3.2446123087683*Math.log(speed*100))-11.846429094476)/(3/cap);
+    var calculatedAmperage = (119-(50/speed))/23/(3/cap); // {0 < calculatedAmperage <= 3}
     if (calculatedAmperage > cap) return cap;
-    if (calculatedAmperage < 0) return 0.01;
+    if (calculatedAmperage <= 0) return 0.01;
     return calculatedAmperage;
 }
 
