@@ -79,6 +79,8 @@ var entryIndex = {
     "hydrazinejetpack": "titaniumAlloy",
     "solidfueljetpack": "aluminumAlloy",
     "smallcamera": "steel",
+    "scanner": "steel",
+    "figurine": "plastic",
 
     "drill1": ["ceramic", "tungstenCarbide"],
     "drill2": ["titaniumAlloy", "tungstenCarbide"],

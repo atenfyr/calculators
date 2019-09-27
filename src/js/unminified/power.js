@@ -28,6 +28,7 @@ var amperage = {
     "drill1": 0.25,
     "drill2": 0.5,
     "drill3": 0.75,
+    "scanner": 0.3,
 
     "sylva": 5,
     "desolo": 8,
